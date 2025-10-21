@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/ui/globals.css";
 
 export const metadata: Metadata = {
-  title: "MuckIn",
+  title: "Helpinaut",
   description: "A community-driven local services marketplace",
 };
 
