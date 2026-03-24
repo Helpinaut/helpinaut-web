@@ -1,0 +1,27 @@
+import { LoginDto, loginSchema, SignupDto, signupSchema } from "./auth.types";
+import { client } from "@/lib/api/client";
+import { endpointPath } from "@/lib/api/endpoints";
+
+export async function loginRequest(dto: LoginDto) {
+  const parsed = loginSchema.safeParse(dto);
+
+  if (!parsed.success) {
+    throw new Error(parsed.error.message);
+  }
+
+  const res = await client.post(endpointPath.AUTH.LOGIN, dto);
+
+  return res.data as { accessToken: string };
+}
+
+export async function signupRequest(dto: SignupDto) {
+  const parsed = signupSchema.safeParse(dto);
+
+  if (!parsed.success) {
+    throw new Error(parsed.error.message);
+  }
+
+  const res = await client.post(endpointPath.AUTH.SIGNUP, dto);
+
+  return res.data as { accessToken: string };
+}

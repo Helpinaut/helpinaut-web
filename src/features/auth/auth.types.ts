@@ -36,3 +36,16 @@ export const signupSchema = z
   });
 
 export type SignupDto = z.infer<typeof signupSchema>;
+
+export type User = {
+  id: string;
+  email: string;
+  username: string;
+  postalCode: string;
+  adverts: any[]; //TODO change to Advert[],
+  favorites: any[]; //TODO change to Favorite[]
+  latitude: number | null;
+  longitude: number | null;
+  createdAt: string;
+  updatedAt: string;
+};
