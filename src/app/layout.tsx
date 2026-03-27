@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
-import { AppProviders } from "./provider";
+import { AppProvider } from "./provider";
 
 export const metadata: Metadata = {
   title: "Helpinaut",
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <AppProviders>{children}</AppProviders>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
