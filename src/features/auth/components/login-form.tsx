@@ -1,13 +1,13 @@
 "use client";
 
-import { TextField } from "@/components/ui/TextField";
+import { TextField } from "@/components/ui/text-field";
 import { FormEvent, useState } from "react";
 import { LoginDto, loginSchema } from "../auth.types";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useRouter } from "next/navigation";
 import { login } from "../auth.slice";
-import { FormError } from "@/components/shared/FormError";
-import { Button } from "@/components/ui/Button";
+import { FormError } from "@/components/shared/form-error";
+import { Button } from "@/components/ui/button";
 
 export function LoginForm() {
   const dispatch = useAppDispatch();
@@ -44,7 +44,7 @@ export function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-sm space-y-4 rounded bg-white p-6 shadow"
+      className="w-full max-w-sm space-y-4 rounded bg-transparent p-6 shadow"
     >
       <h2 className="text-center text-2xl font-semibold">Login</h2>
       <TextField
