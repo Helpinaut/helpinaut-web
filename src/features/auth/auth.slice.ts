@@ -19,20 +19,19 @@ const initialState: AuthState = {
   error: null,
 };
 
-export const login = createAsyncThunk(
-  endpointPath.AUTH.LOGIN,
-  async (dto: LoginDto, { rejectWithValue }) => {
-    try {
-      const res = await loginRequest(dto);
+export const login = createAsyncThunk<
+  string,
+  LoginDto,
+  { rejectValue: string }
+>(endpointPath.AUTH.LOGIN, async (dto, { rejectWithValue }) => {
+  try {
+    const res = await loginRequest(dto);
 
-      return res.accessToken;
-    } catch (error: any) {
-      return rejectWithValue(
-        error?.response?.data?.message ?? error?.message ?? "Login failed",
-      );
-    }
-  },
-);
+    return res.accessToken;
+  } catch (error: any) {
+    return rejectWithValue(error.message);
+  }
+});
 
 export const signup = createAsyncThunk(
   endpointPath.AUTH.SIGNUP,

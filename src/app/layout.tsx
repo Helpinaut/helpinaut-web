@@ -5,6 +5,7 @@ import { AppProvider } from "./provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Toaster } from "sonner";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -42,6 +43,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             disableTransitionOnChange
           >
             {children}
+            <Toaster
+              position="top-center"
+              closeButton
+              richColors
+              theme="system"
+            />
           </ThemeProvider>
         </AppProvider>
       </body>

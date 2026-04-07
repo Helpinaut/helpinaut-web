@@ -1,11 +1,14 @@
 import z from "zod";
 
 export const loginSchema = z.object({
-  email: z.email("Invalid email format").nonempty("Email is required"),
+  email: z
+    .string()
+    .nonempty("Email is required")
+    .pipe(z.email("Invalid email format")),
   password: z
     .string()
-    .min(8, "Password must be longer than 8 characters")
-    .nonempty("Password is required"),
+    .nonempty("Password is required")
+    .min(8, "Password must be longer than 8 characters"),
 });
 
 export type LoginDto = z.infer<typeof loginSchema>;
@@ -15,20 +18,20 @@ export const signupSchema = z
     email: z.email("Invalid email format").nonempty("Email is required"),
     username: z
       .string()
-      .max(16, "Username can not be longer than 16 characters")
-      .nonempty("Username is required"),
+      .nonempty("Username is required")
+      .max(16, "Username can not be longer than 16 characters"),
     password: z
       .string()
-      .min(8, "Password must be longer than 8 characters")
-      .nonempty("Password is required"),
+      .nonempty("Password is required")
+      .min(8, "Password must be longer than 8 characters"),
     repeatPassword: z
       .string()
-      .min(8, "Password must be longer than 8 characters")
-      .nonempty("Please repeat your password"),
+      .nonempty("Please repeat your password")
+      .min(8, "Password must be longer than 8 characters"),
     postalCode: z
       .string()
-      .regex(/^\d{5}$/)
-      .nonempty("Invalid Spanish code format"),
+      .nonempty("Invalid Spanish code format")
+      .regex(/^\d{5}$/),
   })
   .refine((data) => data.password === data.repeatPassword, {
     error: "Passwords do not match",
