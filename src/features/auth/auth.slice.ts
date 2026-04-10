@@ -33,20 +33,21 @@ export const login = createAsyncThunk<
   }
 });
 
-export const signup = createAsyncThunk(
-  endpointPath.AUTH.SIGNUP,
-  async (dto: SignupDto, { rejectWithValue }) => {
-    try {
-      const res = await signupRequest(dto);
+export const signup = createAsyncThunk<
+  string,
+  SignupDto,
+  { rejectValue: string }
+>(endpointPath.AUTH.SIGNUP, async (dto, { rejectWithValue }) => {
+  try {
+    const res = await signupRequest(dto);
 
-      return res.accessToken;
-    } catch (error: any) {
-      return rejectWithValue(
-        error?.response?.data?.message ?? error?.message ?? "Signup failed",
-      );
-    }
-  },
-);
+    return res.accessToken;
+  } catch (error: any) {
+    return rejectWithValue(
+      error?.response?.data?.message ?? error?.message ?? "Signup failed",
+    );
+  }
+});
 
 const authSlice = createSlice({
   name: "auth",

@@ -24,16 +24,17 @@ export const signupSchema = z
       .string()
       .nonempty("Password is required")
       .min(8, "Password must be longer than 8 characters"),
-    repeatPassword: z
+    repeatedPassword: z
       .string()
       .nonempty("Please repeat your password")
       .min(8, "Password must be longer than 8 characters"),
     postalCode: z
       .string()
-      .nonempty("Invalid Spanish code format")
-      .regex(/^\d{5}$/),
+      .nonempty("Postal code is required")
+      .length(5, "Postal code must be exactly 5 digits")
+      .regex(/^(0[1-9]|[1-4]\d|5[0-2])\d{3}$/, "Invalid Spanish postal code"),
   })
-  .refine((data) => data.password === data.repeatPassword, {
+  .refine((data) => data.password === data.repeatedPassword, {
     error: "Passwords do not match",
     path: ["repeatedPassword"],
   });
