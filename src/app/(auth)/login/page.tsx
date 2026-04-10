@@ -40,6 +40,7 @@ export default function LoginPage() {
       // remember: true,
     },
     resolver: zodResolver(loginSchema),
+    mode: "onBlur",
   });
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
@@ -65,10 +66,8 @@ export default function LoginPage() {
       <div className="mx-4 w-full max-w-md pb-0">
         <Card className="mb-4">
           <CardHeader className="mt-4 mb-2 space-y-1 text-center">
-            <div className="flex justify-center">
-              <Link href="/" aria-label="Helpinaut homepage">
-                <Logo />
-              </Link>
+            <div className="mb-4 flex justify-center">
+              <Logo aria-hidden="true" />
             </div>
             <CardTitle className="text-2xl font-semibold text-balance">
               Sign in to Helpinaut
