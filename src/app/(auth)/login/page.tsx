@@ -51,13 +51,9 @@ export default function LoginPage() {
 
     if (login.fulfilled.match(res)) {
       form.reset();
-      toast.success("Login successfully", {
-        description: JSON.stringify(data, null, 2),
-        className: "whitespace-pre-wrap font-mono",
-      });
-      //router.push("/");
+      router.push("/");
     } else {
-      toast.error(res.payload as string);
+      toast.error(res.payload?.message);
     }
   }
 

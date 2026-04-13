@@ -28,7 +28,7 @@ import { Eye, EyeOff, Home, Lock, Mail, MapPin, User } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
-import { Controller, useForm, useWatch } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 export default function SignupPage() {
@@ -54,12 +54,9 @@ export default function SignupPage() {
 
     if (signup.fulfilled.match(res)) {
       form.reset();
-      toast.success("Created account successfully", {
-        description: JSON.stringify(data, null, 2),
-        className: "whitespace-pre-wrap font-mono",
-      });
+      router.push("/");
     } else {
-      toast.error(res.payload as string);
+      toast.error(res.payload?.message);
     }
   }
 

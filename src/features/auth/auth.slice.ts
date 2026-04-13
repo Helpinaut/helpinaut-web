@@ -2,8 +2,10 @@
 
 import { endpointPath } from "@/lib/api/endpoints";
 import { LoginDto, SignupDto, User } from "./auth.types";
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { loginRequest, signupRequest } from "./auth.service";
+import { handleThunkError } from "@/lib/api/errors";
+import { createAppAsyncThunk } from "@/store/app.thunk";
 
 type AuthState = {
   user: User | null;
@@ -19,35 +21,31 @@ const initialState: AuthState = {
   error: null,
 };
 
-export const login = createAsyncThunk<
-  string,
-  LoginDto,
-  { rejectValue: string }
->(endpointPath.AUTH.LOGIN, async (dto, { rejectWithValue }) => {
-  try {
-    const res = await loginRequest(dto);
+export const login = createAppAsyncThunk<string, LoginDto>(
+  endpointPath.AUTH.LOGIN,
+  async (dto, { rejectWithValue }) => {
+    try {
+      const res = await loginRequest(dto);
 
-    return res.accessToken;
-  } catch (error: any) {
-    return rejectWithValue(error.message);
-  }
-});
+      return res.accessToken;
+    } catch (error) {
+      return rejectWithValue(handleThunkError(error));
+    }
+  },
+);
 
-export const signup = createAsyncThunk<
-  string,
-  SignupDto,
-  { rejectValue: string }
->(endpointPath.AUTH.SIGNUP, async (dto, { rejectWithValue }) => {
-  try {
-    const res = await signupRequest(dto);
+export const signup = createAppAsyncThunk<string, SignupDto>(
+  endpointPath.AUTH.SIGNUP,
+  async (dto, { rejectWithValue }) => {
+    try {
+      const res = await signupRequest(dto);
 
-    return res.accessToken;
-  } catch (error: any) {
-    return rejectWithValue(
-      error?.response?.data?.message ?? error?.message ?? "Signup failed",
-    );
-  }
-});
+      return res.accessToken;
+    } catch (error) {
+      return rejectWithValue(handleThunkError(error));
+    }
+  },
+);
 
 const authSlice = createSlice({
   name: "auth",
@@ -90,7 +88,10 @@ const authSlice = createSlice({
       })
       .addCase(login.rejected, (state, action) => {
         state.status = "error";
-        state.error = action.payload as string;
+        state.error =
+          action.payload?.message ??
+          action.error.message ??
+          "Something went wrong";
       })
       //signup
       .addCase(signup.pending, (state) => {
@@ -107,7 +108,10 @@ const authSlice = createSlice({
       })
       .addCase(signup.rejected, (state, action) => {
         state.status = "error";
-        state.error = action.payload as string;
+        state.error =
+          action.payload?.message ??
+          action.error.message ??
+          "Something went wrong";
       });
   },
 });

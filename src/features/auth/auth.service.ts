@@ -2,7 +2,9 @@ import { LoginDto, loginSchema, SignupDto, signupSchema } from "./auth.types";
 import { client } from "@/lib/api/client";
 import { endpointPath } from "@/lib/api/endpoints";
 
-export async function loginRequest(dto: LoginDto) {
+export async function loginRequest(
+  dto: LoginDto,
+): Promise<{ accessToken: string }> {
   const parsed = loginSchema.safeParse(dto);
 
   if (!parsed.success) {
@@ -11,10 +13,12 @@ export async function loginRequest(dto: LoginDto) {
 
   const res = await client.post(endpointPath.AUTH.LOGIN, dto);
 
-  return res.data as { accessToken: string };
+  return res.data;
 }
 
-export async function signupRequest(dto: SignupDto) {
+export async function signupRequest(
+  dto: SignupDto,
+): Promise<{ accessToken: string }> {
   const parsed = signupSchema.safeParse(dto);
 
   if (!parsed.success) {
@@ -23,5 +27,5 @@ export async function signupRequest(dto: SignupDto) {
 
   const res = await client.post(endpointPath.AUTH.SIGNUP, dto);
 
-  return res.data as { accessToken: string };
+  return res.data;
 }
