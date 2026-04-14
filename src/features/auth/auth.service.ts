@@ -3,9 +3,9 @@ import { client } from "@/lib/api/client";
 import { endpointPath } from "@/lib/api/endpoints";
 
 export async function loginRequest(
-  dto: LoginDto,
+  dto: Omit<LoginDto, "remember">,
 ): Promise<{ accessToken: string }> {
-  const parsed = loginSchema.safeParse(dto);
+  const parsed = loginSchema.omit({ remember: true }).safeParse(dto);
 
   if (!parsed.success) {
     throw new Error(parsed.error.message);
@@ -17,7 +17,7 @@ export async function loginRequest(
 }
 
 export async function signupRequest(
-  dto: SignupDto,
+  dto: Omit<SignupDto, "remember">,
 ): Promise<{ accessToken: string }> {
   const parsed = signupSchema.safeParse(dto);
 

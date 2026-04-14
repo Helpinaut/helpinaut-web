@@ -9,6 +9,7 @@ export const loginSchema = z.object({
     .string()
     .nonempty("Password is required")
     .min(8, "Password must be longer than 8 characters"),
+  remember: z.boolean(),
 });
 
 export type LoginDto = z.infer<typeof loginSchema>;

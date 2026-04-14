@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Field,
   FieldError,
@@ -37,7 +38,7 @@ export default function LoginPage() {
     defaultValues: {
       email: "",
       password: "",
-      // remember: true,
+      remember: true,
     },
     resolver: zodResolver(loginSchema),
     mode: "onBlur",
@@ -169,33 +170,33 @@ export default function LoginPage() {
                   )}
                 />
                 <FieldSeparator />
-                {/* <Controller
-                control={form.control}
-                name="remember"
-                render={({
-                  field: { value, onChange, ...field },
-                  fieldState,
-                }) => (
-                  <Field
-                    data-invalid={fieldState.invalid}
-                    orientation="horizontal"
-                    className="flex items-center space-y-0.5"
-                  >
-                    <Checkbox
-                      {...field}
-                      id={field.name}
-                      checked={true} //checked={value}
-                      onCheckedChange={onChange}
-                    />
-                    <FieldLabel
-                      htmlFor={field.name}
-                      className="leading-none font-normal"
+                <Controller
+                  control={form.control}
+                  name="remember"
+                  render={({
+                    field: { value, onChange, ...field },
+                    fieldState,
+                  }) => (
+                    <Field
+                      data-invalid={fieldState.invalid}
+                      orientation="horizontal"
+                      className="flex items-center space-y-0.5"
                     >
-                      Remember me
-                    </FieldLabel>
-                  </Field>
-                )}
-              /> */}
+                      <Checkbox
+                        {...field}
+                        id={field.name}
+                        checked={value}
+                        onCheckedChange={onChange}
+                      />
+                      <FieldLabel
+                        htmlFor={field.name}
+                        className="leading-none font-normal"
+                      >
+                        Remember me
+                      </FieldLabel>
+                    </Field>
+                  )}
+                />
                 <Button type="submit" disabled={form.formState.isSubmitting}>
                   {form.formState.isSubmitting ? (
                     <>
