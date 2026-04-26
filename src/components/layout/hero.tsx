@@ -1,4 +1,4 @@
-import { Plus, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
 
 export function Hero() {
@@ -28,11 +28,10 @@ export function Hero() {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Button size="lg" className="px-8 text-lg">
-              <Plus size={20} />
-              <span>Post an advert</span>
+              I need help
             </Button>
             <Button size="lg" variant="outline" className="px-8 text-lg">
-              Browse all adverts
+              I can help
             </Button>
           </div>
           <div className="mt-12 grid grid-cols-3 gap-8 text-center md:gap-16">
@@ -41,7 +40,7 @@ export function Hero() {
                 +20K
               </div>
               <div className="text-muted-foreground text-sm">
-                Actives adverts
+                Active adverts
               </div>
             </div>
             <div>
