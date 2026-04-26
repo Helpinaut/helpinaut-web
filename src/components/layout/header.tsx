@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, Menu, Plus, Search } from "lucide-react";
+import { ArrowDown, Plus, Search } from "lucide-react";
 import { Logo } from "../assets/logo";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -8,17 +8,10 @@ import { Label } from "../ui/label";
 import { useState } from "react";
 import { Separator } from "../ui/separator";
 import { cn } from "@/lib/utils";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "../ui/sheet";
+import { NavigationSheet } from "../shared/navigation-sheet";
 
 export function Header() {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState<boolean>(false);
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMobileSearchOpen = () => {
     setIsMobileSearchOpen((prev) => !prev);
@@ -83,26 +76,7 @@ export function Header() {
               >
                 <Plus aria-hidden="true" size={20} />
               </Button>
-              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-                <SheetTrigger
-                  aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                  render={
-                    <Button className="md:hidden" size="icon" variant="ghost">
-                      <Menu aria-hidden="true" size={20} />
-                    </Button>
-                  }
-                />
-                <SheetContent
-                  id="mobile-menu"
-                  className="w-72 sm:w-80"
-                  side="left"
-                >
-                  <SheetHeader>
-                    <SheetTitle>Menu</SheetTitle>
-                  </SheetHeader>
-                  <nav className="mt-4 space-y-2"></nav>
-                </SheetContent>
-              </Sheet>
+              <NavigationSheet user={null} />
             </div>
           </div>
           <div
