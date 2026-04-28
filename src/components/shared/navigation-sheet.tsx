@@ -1,17 +1,18 @@
 import {
   FileText,
-  HandHelping,
+  HandCoins,
+  HandPlatter,
   Heart,
+  Home,
   LifeBuoy,
   LogIn,
   LogOut,
   Menu,
   MessageCircle,
-  Plus,
   Search,
   Settings,
-  User,
-  UserPlus,
+  User2,
+  UserPlus2,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import {
@@ -22,39 +23,50 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { useState } from "react";
-import { UserDto } from "@/features/auth/auth.types";
+import { User } from "@/features/auth/auth.types";
 import { NavigationSection } from "./navigation-section";
 import { NavigationItem } from "./navigation-item";
 
-export function NavigationSheet({ user }: { user: UserDto | null }) {
+export function NavigationSheet({ user }: { user: User | null }) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <SheetTrigger
-        type="button"
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         render={
           <Button className="md:hidden" size="icon" variant="ghost">
             <Menu aria-hidden="true" size={20} />
           </Button>
         }
+        type="button"
       />
       <SheetContent id="mobile-menu" className="w-72 sm:w-80" side="left">
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
-        <nav className="mt-3 flex flex-col gap-6">
+        <nav className="flex flex-col gap-6">
           <NavigationSection>
-            <NavigationItem href="#main" icon={Search}>
+            <NavigationItem
+              href="/"
+              icon={Home}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </NavigationItem>
+            <NavigationItem
+              href="#main"
+              icon={Search}
+              onClick={() => setIsMenuOpen(false)}
+            >
               Explore services
             </NavigationItem>
           </NavigationSection>
           <NavigationSection title="Create">
-            <NavigationItem href="#" icon={HandHelping}>
+            <NavigationItem href="#" icon={HandCoins}>
               Request a service
             </NavigationItem>
-            <NavigationItem href="#" icon={Plus}>
+            <NavigationItem href="#" icon={HandPlatter}>
               Offer a service
             </NavigationItem>
           </NavigationSection>
@@ -74,14 +86,11 @@ export function NavigationSheet({ user }: { user: UserDto | null }) {
           <NavigationSection title="Account">
             {user ? (
               <>
-                <NavigationItem href="#" icon={User}>
+                <NavigationItem href="#" icon={User2}>
                   Profile
                 </NavigationItem>
                 <NavigationItem href="#" icon={Settings}>
                   Settings
-                </NavigationItem>
-                <NavigationItem href="#" icon={User}>
-                  Profile
                 </NavigationItem>
                 <Button
                   variant="ghost"
@@ -93,10 +102,10 @@ export function NavigationSheet({ user }: { user: UserDto | null }) {
               </>
             ) : (
               <>
-                <NavigationItem href="#" icon={LogIn}>
+                <NavigationItem href="/login" icon={LogIn}>
                   Log in
                 </NavigationItem>
-                <NavigationItem href="#" icon={UserPlus}>
+                <NavigationItem href="/signup" icon={UserPlus2}>
                   Sign up
                 </NavigationItem>
               </>

@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { HandCoins, HandPlatter, Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
 
 export function Hero() {
@@ -28,10 +28,10 @@ export function Hero() {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Button size="lg" className="px-8 text-lg">
-              I need help
+              <HandCoins aria-hidden="true" />I need help
             </Button>
             <Button size="lg" variant="outline" className="px-8 text-lg">
-              I can help
+              <HandPlatter aria-hidden="true" />I can help
             </Button>
           </div>
           <div className="mt-12 grid grid-cols-3 gap-8 text-center md:gap-16">

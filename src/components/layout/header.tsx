@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, Plus, Search } from "lucide-react";
+import { ArrowDown, HandCoins, HandPlatter, Plus, Search } from "lucide-react";
 import { Logo } from "../assets/logo";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -9,6 +9,13 @@ import { useState } from "react";
 import { Separator } from "../ui/separator";
 import { cn } from "@/lib/utils";
 import { NavigationSheet } from "../shared/navigation-sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import Link from "next/link";
 
 export function Header() {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState<boolean>(false);
@@ -63,19 +70,39 @@ export function Header() {
                 size="icon"
                 variant="ghost"
               >
-                <Search aria-hidden="true" size={20} />
+                <Search aria-hidden="true" />
               </Button>
-              <Button className="hidden sm:flex">
-                <Plus aria-hidden="true" size={16} />
-                <span>Post an advert</span>
-              </Button>
-              <Button
-                aria-label="Post an advert"
-                className="sm:hidden"
-                size="icon"
-              >
-                <Plus aria-hidden="true" size={20} />
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  aria-label="Create listing"
+                  render={
+                    <Button className="size-8 sm:h-8 sm:w-auto">
+                      <Plus aria-hidden="true" />
+                      <span className="hidden sm:inline">Create listing</span>
+                    </Button>
+                  }
+                  type="button"
+                />
+                <DropdownMenuContent className="w-full space-y-1">
+                  <DropdownMenuItem
+                    render={
+                      <Link href="#" className="flex items-center gap-2">
+                        <HandCoins aria-hidden="true" />
+                        Request help
+                      </Link>
+                    }
+                  />
+                  <DropdownMenuItem
+                    render={
+                      <Link href="#" className="flex items-center gap-2">
+                        <HandPlatter aria-hidden="true" />
+                        Offer help
+                      </Link>
+                    }
+                  />
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <NavigationSheet user={null} />
             </div>
           </div>

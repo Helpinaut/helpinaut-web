@@ -47,8 +47,8 @@ export type User = {
   email: string;
   username: string;
   postalCode: string;
-  adverts: any[]; //TODO change to Advert[],
-  favorites: any[]; //TODO change to Favorite[]
+  adverts: any[]; // TODO: change from any[] to Advert[] once Advert is defined
+  favorites: any[]; // TODO: change from any[] to Favorite[] once Favorite is defined
   latitude: number | null;
   longitude: number | null;
   createdAt: string;
