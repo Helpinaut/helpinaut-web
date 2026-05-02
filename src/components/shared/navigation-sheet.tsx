@@ -1,3 +1,5 @@
+"use client";
+
 import {
   FileText,
   HandCoins,
@@ -23,11 +25,16 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { useState } from "react";
-import { User } from "@/features/auth/auth.types";
+import { User } from "@/features/users/user.types";
 import { NavigationSection } from "./navigation-section";
 import { NavigationItem } from "./navigation-item";
+import { useAppDispatch } from "@/store/hooks";
+import { logout } from "@/features/auth/auth.slice";
+import { useRouter } from "next/navigation";
 
 export function NavigationSheet({ user }: { user: User | null }) {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
@@ -95,6 +102,10 @@ export function NavigationSheet({ user }: { user: User | null }) {
                 <Button
                   variant="ghost"
                   className="text-destructive hover:text-destructive w-full justify-start gap-2"
+                  onClick={() => {
+                    dispatch(logout());
+                    router.push("/");
+                  }}
                 >
                   <LogOut aria-hidden="true" size={18} />
                   Logout
@@ -116,6 +127,7 @@ export function NavigationSheet({ user }: { user: User | null }) {
               Help center
             </NavigationItem>
           </NavigationSection>
+          {/* //TODO: add app theme toggle and language i18n selector */}
         </nav>
       </SheetContent>
     </Sheet>

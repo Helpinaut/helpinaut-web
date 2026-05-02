@@ -1,12 +1,14 @@
 "use client";
 
 import { endpointPath } from "@/lib/api/endpoints";
-import { LoginDto, SignupDto, User } from "./auth.types";
+import { LoginDto, SignupDto } from "./auth.types";
+import { User } from "../users/user.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { loginRequest, signupRequest } from "./auth.service";
 import { handleThunkError } from "@/lib/api/errors";
 import { createAppAsyncThunk } from "@/store/app.thunk";
 import { tokenStorage } from "@/lib/auth/token";
+import { clearUser } from "../users/user.slice";
 
 type AuthState = {
   user: User | null;
@@ -54,6 +56,14 @@ export const signup = createAppAsyncThunk<AuthSessionPayload, SignupDto>(
   },
 );
 
+export const logout = createAppAsyncThunk(
+  "auth/logout",
+  async (_, { dispatch }) => {
+    dispatch(clearAuth());
+    dispatch(clearUser());
+  },
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -65,7 +75,7 @@ const authSlice = createSlice({
         state.accessToken = token;
       }
     },
-    logout(state) {
+    clearAuth(state) {
       state.user = null;
       state.accessToken = null;
 
@@ -125,5 +135,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { hydrateFromStorage, logout } = authSlice.actions;
+export const { hydrateFromStorage, clearAuth } = authSlice.actions;
 export const authReducer = authSlice.reducer;

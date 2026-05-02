@@ -16,9 +16,11 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import Link from "next/link";
+import { useAppSelector } from "@/store/hooks";
 
 export function Header() {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState<boolean>(false);
+  const user = useAppSelector((s) => s.user.user);
 
   const toggleMobileSearchOpen = () => {
     setIsMobileSearchOpen((prev) => !prev);
@@ -102,8 +104,7 @@ export function Header() {
                   />
                 </DropdownMenuContent>
               </DropdownMenu>
-
-              <NavigationSheet user={null} />
+              <NavigationSheet user={user} />
             </div>
           </div>
           <div
