@@ -17,6 +17,7 @@ import {
 } from "../ui/dropdown-menu";
 import Link from "next/link";
 import { useAppSelector } from "@/store/hooks";
+import { ThemeToggle } from "../shared/theme-toggle";
 
 export function Header() {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState<boolean>(false);
@@ -104,6 +105,8 @@ export function Header() {
                   />
                 </DropdownMenuContent>
               </DropdownMenu>
+              <ThemeToggle className="hidden md:flex" />
+              {/* //TODO: add language i18n selector */}
               <NavigationSheet user={user} />
             </div>
           </div>
