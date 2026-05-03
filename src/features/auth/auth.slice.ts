@@ -57,7 +57,7 @@ export const signup = createAppAsyncThunk<AuthSessionPayload, SignupDto>(
 );
 
 export const logout = createAppAsyncThunk(
-  "auth/logout",
+  endpointPath.AUTH.LOGOUT,
   async (_, { dispatch }) => {
     dispatch(clearAuth());
     dispatch(clearUser());

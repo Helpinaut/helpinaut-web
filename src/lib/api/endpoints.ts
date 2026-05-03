@@ -2,6 +2,7 @@ export const endpointPath = {
   AUTH: {
     LOGIN: "auth/login",
     SIGNUP: "auth/signup",
+    LOGOUT: "auth/logout",
   },
   ADVERTS: {
     BASE: "/adverts",
