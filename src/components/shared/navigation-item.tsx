@@ -1,7 +1,7 @@
 import { type LucideIcon } from "lucide-react";
 import { ReactNode } from "react";
 import { buttonVariants } from "../ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 type Props = {

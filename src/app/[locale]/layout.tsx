@@ -8,12 +8,9 @@ import { Toaster } from "sonner";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import { getMessages, setRequestLocale } from "next-intl/server";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 
 export const metadata: Metadata = {
   title: "Helpinaut",
@@ -33,6 +30,10 @@ export const metadata: Metadata = {
   },
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({
   children,
   params,
@@ -46,6 +47,10 @@ export default async function RootLayout({
     return notFound();
   }
 
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+
   return (
     <html
       lang={locale}
@@ -54,7 +59,7 @@ export default async function RootLayout({
     >
       <body>
         <AppProvider>
-          <NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
             {children}
             <Toaster
               position="top-center"

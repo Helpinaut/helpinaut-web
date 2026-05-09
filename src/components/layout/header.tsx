@@ -15,7 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useAppSelector } from "@/store/hooks";
 import { ThemeSelector } from "../shared/theme-selector";
 import { LanguageSelector } from "../shared/language-selector";

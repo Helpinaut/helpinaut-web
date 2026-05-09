@@ -25,7 +25,7 @@ import { LoginDto, loginSchema } from "@/features/auth/auth.types";
 import { useAppDispatch } from "@/store/hooks";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff, Home, Lock, Mail } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
