@@ -33,7 +33,8 @@ import { useAppDispatch } from "@/store/hooks";
 import { logout } from "@/features/auth/auth.slice";
 import { useRouter } from "next/navigation";
 import { Logo } from "../assets/logo";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeSelector } from "./theme-selector";
+import { LanguageSelector } from "./language-selector";
 
 export function NavigationSheet({ user }: { user: User | null }) {
   const dispatch = useAppDispatch();
@@ -136,8 +137,10 @@ export function NavigationSheet({ user }: { user: User | null }) {
               )}
             </NavigationSection>
             <NavigationSection>
-              <ThemeToggle />
-              {/* //TODO: add language i18n selector */}
+              <div className="flex space-x-2">
+                <LanguageSelector />
+                <ThemeSelector />
+              </div>
             </NavigationSection>
           </nav>
         </SheetFooter>

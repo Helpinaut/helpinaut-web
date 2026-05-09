@@ -1,30 +1,29 @@
 import { HandCoins, HandPlatter, Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
+import { getTranslations } from "next-intl/server";
 
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("Hero");
+
   return (
     <section className="via-background w-full bg-linear-to-tr from-sky-500/10 to-purple-500/10 py-12 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-violet-100 px-4 py-2 text-indigo-600 dark:bg-[#1C1830] dark:text-indigo-400">
             <Sparkles size={16} />
-            <span className="text-sm">
-              Connect with neighbors and professionals in your area
-            </span>
+            <span className="text-sm">{t("subheading")}</span>
           </div>
           <h2 className="mb-6 text-4xl md:text-5xl lg:text-6xl">
-            Do you <strong>need a hand</strong>
+            {t("heading-line-1")} <strong>{t("heading-line-1-strong")}</strong>
             <br />
-            or <strong>have one to offer</strong>?
+            {t("heading-line-2")} <strong>{t("heading-line-2-strong")}</strong>?
             <br />
             <span className="text-indigo-600 dark:text-indigo-400">
-              Tell those around you
+              {t("heading-line-3")}
             </span>
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl text-lg md:text-xl">
-            Hundreds of people post and find local services every day. Plumbers,
-            electricians, dog walkers, and much more. All right in your
-            neighborhood.
+            {t("description")}
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Button size="lg" className="px-8 text-lg">
