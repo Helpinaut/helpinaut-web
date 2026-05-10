@@ -6,7 +6,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
@@ -16,7 +15,6 @@ import {
 import { cn } from "@/lib/utils";
 import { Languages } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
 
 export function LanguageSelector({ className }: { className?: string }) {
   const pathname = usePathname();

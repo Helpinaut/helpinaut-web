@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { ReactNode } from "react";
-import { AppProvider } from "./provider";
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale } from "next-intl/server";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Helpinaut",
@@ -20,11 +14,11 @@ export const metadata: Metadata = {
     icon: [
       {
         url: "/helpinaut-light.svg",
-        media: "(prefers-color-scheme: dark",
+        media: "(prefers-color-scheme: dark)",
       },
       {
         url: "/helpinaut-dark.svg",
-        media: "(prefers-color-scheme: light",
+        media: "(prefers-color-scheme: light)",
       },
     ],
   },
@@ -34,7 +28,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
@@ -52,24 +46,9 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html
-      lang={locale}
-      suppressHydrationWarning
-      className={cn("font-sans", geist.variable)}
-    >
-      <body>
-        <AppProvider>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-            <Toaster
-              position="top-center"
-              closeButton
-              richColors
-              theme="system"
-            />
-          </NextIntlClientProvider>
-        </AppProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      {children}
+      <Toaster position="top-center" closeButton richColors theme="system" />
+    </NextIntlClientProvider>
   );
 }
