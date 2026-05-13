@@ -1,11 +1,29 @@
 {
+  "Metadata": {
+    "title": "Helpinaut",
+    "description": "Explorando mejores formas de ayudarnos con mercado de servicios locales."
+  },
+  "LoginPage": {
+    "title": "Iniciar Sesión",
+    "sign-in-to-helpinaut": "Inicia sesión en Helpinaut",
+    "enter-your-credentials": "Introduce tus credenciaes para acceder a tu cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgot-password": "¿Olvidaste tu contraseña?",
+    "remember-me": "Recuérdame",
+    "processing": "Procesando",
+    "sign-in": "Iniciar sesión",
+    "new-to-helpinaut": "¿Nuevo en Helpinaut?",
+    "create-an-account": "Crea una cuenta",
+    "back-to-homepage": "Volver a la página principal"
+  },
   "Hero": {
-    "subheading": "Conecta con vecinos y profesionales en tu zona",
-    "heading-line-1": "Necesitas",
-    "heading-line-1-strong": "",
-    "heading-line-2": "",
-    "heading-line-2-strong": "",
-    "heading-line-3": "Divúlgalo en tu área",
-    "description": "Cientos de personas ofrecen y buscan servicios locales a diario. Fontanería, electricistas, pasear al perro y mucho más. Todo en tu vecindario."
+    "subheading": "Conecta con vecinos y profesionales de tu zona",
+    "heading-line-1": "¿Necesitas",
+    "heading-line-1-strong": "una mano",
+    "heading-line-2": "o",
+    "heading-line-2-strong": "quieres ofrecerla",
+    "heading-line-3": "No estás solo ahí fuera",
+    "description": "Miles de personas ofrecen y buscan servicios a diario. Fontanería, electricistas, clases de guitarra y mucho más. Todo en tu vecindario."
   }
 }

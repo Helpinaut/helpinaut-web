@@ -1,11 +1,29 @@
 {
+  "Metadata": {
+    "title": "Helpinaut",
+    "description": "Exploring better ways to help with a local services marketplace."
+  },
+  "LoginPage": {
+    "title": "Sing In",
+    "sign-in-to-helpinaut": "Sign in to Helpinaut",
+    "enter-your-credentials": "Enter your credentials to access your account",
+    "email": "Email",
+    "password": "Password",
+    "forgot-password": "Forgot password?",
+    "remember-me": "Remember me",
+    "processing": "Processing",
+    "sign-in": "Sign in",
+    "new-to-helpinaut": "New to Helpinaut?",
+    "create-an-account": "Create an account",
+    "back-to-homepage": "Back to homepage"
+  },
   "Hero": {
     "subheading": "Connect with neighbors and professionals in your area",
     "heading-line-1": "Do you",
     "heading-line-1-strong": "need a hand",
     "heading-line-2": "or",
-    "heading-line-2-strong": "have one to offer",
-    "heading-line-3": "Tell those around you",
+    "heading-line-2-strong": "want to lend one",
+    "heading-line-3": "You're not alone out there",
     "description": "Hundreds of people post and find local services every day. Plumbers, electricians, guitar teachers, and much more. All right in your neighborhood."
   }
 }

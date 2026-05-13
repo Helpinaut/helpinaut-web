@@ -4,25 +4,41 @@ import { Toaster } from "sonner";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Helpinaut",
-  description:
-    "Exploring better ways to help with a local services marketplace.",
-  icons: {
-    icon: [
-      {
-        url: "/helpinaut-light.svg",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/helpinaut-dark.svg",
-        media: "(prefers-color-scheme: light)",
-      },
-    ],
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const t = await getTranslations({
+    locale,
+    namespace: "Metadata",
+  });
+
+  return {
+    title: { default: t("title"), template: `%s | ${t("title")}` },
+    description: t("description"),
+    icons: {
+      icon: [
+        {
+          url: "/helpinaut-light.svg",
+          media: "(prefers-color-scheme: dark)",
+        },
+        {
+          url: "/helpinaut-dark.svg",
+          media: "(prefers-color-scheme: light)",
+        },
+      ],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
