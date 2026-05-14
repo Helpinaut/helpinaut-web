@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Controller, useForm } from "react-hook-form";
-import { LoginDto, LoginFormValues, loginFormSchema } from "../auth.types";
+import { LoginFormValues, loginFormSchema } from "../auth.types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch } from "@/store/hooks";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -30,10 +30,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "next-intl";
+import { ApiError } from "@/lib/api/errors";
 
 export function LoginForm() {
   const t = useTranslations("LoginPage");
   const validationMessages = useTranslations("validation");
+  const errorMessages = useTranslations("errors");
   const form = useForm<LoginFormValues>({
     defaultValues: {
       email: "",
@@ -46,14 +48,22 @@ export function LoginForm() {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-  async function onSubmit(data: LoginDto) {
-    const res = await dispatch(login(data));
+  async function onSubmit(data: LoginFormValues) {
+    try {
+      const res = await dispatch(login(data)).unwrap();
+      if (login.fulfilled.match(res)) {
+        form.reset();
+        router.push("/");
+      }
+    } catch (error) {
+      const apiError = error as ApiError;
+      console.log(apiError);
 
-    if (login.fulfilled.match(res)) {
-      form.reset();
-      router.push("/");
-    } else {
-      toast.error(res.payload?.message);
+      toast.error(
+        errorMessages.has(apiError.code)
+          ? errorMessages(apiError.code)
+          : errorMessages("UNKNOWN_ERROR"),
+      );
     }
   }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { endpointPath } from "@/lib/api/endpoints";
-import { LoginDto, SignupDto } from "./auth.types";
+import { LoginDto, LoginFormValues, SignupDto } from "./auth.types";
 import { User } from "../users/user.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { loginRequest, signupRequest } from "./auth.service";
@@ -14,7 +14,7 @@ type AuthState = {
   user: User | null;
   accessToken: string | null;
   status: "idle" | "loading" | "error";
-  error: string | null;
+  errorCode: string | null;
 };
 
 type AuthSessionPayload = {
@@ -26,10 +26,10 @@ const initialState: AuthState = {
   user: null,
   accessToken: null,
   status: "idle",
-  error: null,
+  errorCode: null,
 };
 
-export const login = createAppAsyncThunk<AuthSessionPayload, LoginDto>(
+export const login = createAppAsyncThunk<AuthSessionPayload, LoginFormValues>(
   endpointPath.AUTH.LOGIN,
   async (dto, { rejectWithValue }) => {
     try {
@@ -87,7 +87,7 @@ const authSlice = createSlice({
       // login
       .addCase(login.pending, (state) => {
         state.status = "loading";
-        state.error = null;
+        state.errorCode = null;
       })
       .addCase(
         login.fulfilled,
@@ -103,15 +103,12 @@ const authSlice = createSlice({
       )
       .addCase(login.rejected, (state, action) => {
         state.status = "error";
-        state.error =
-          action.payload?.message ??
-          action.error.message ??
-          "Something went wrong";
+        state.errorCode = action.payload?.code ?? "UNKNOWN_ERROR";
       })
       //signup
       .addCase(signup.pending, (state) => {
         state.status = "loading";
-        state.error = null;
+        state.errorCode = null;
       })
       .addCase(
         signup.fulfilled,
@@ -127,10 +124,7 @@ const authSlice = createSlice({
       )
       .addCase(signup.rejected, (state, action) => {
         state.status = "error";
-        state.error =
-          action.payload?.message ??
-          action.error.message ??
-          "Something went wrong";
+        state.errorCode = action.payload?.code ?? "UNKNOWN_ERROR";
       });
   },
 });

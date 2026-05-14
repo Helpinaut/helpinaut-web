@@ -13,6 +13,10 @@
       "min": "Password must be longer than 8 characters"
     }
   },
+  "errors": {
+    "UNKNOWN_ERROR": "Unknown error",
+    "AUTH_INVALID_CREDENTIALS": "Invalid email or password"
+  },
   "LoginPage": {
     "title": "Sing In",
     "sign-in-to-helpinaut": "Sign in to Helpinaut",

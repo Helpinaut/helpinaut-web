@@ -13,6 +13,10 @@
       "min": "La contraseña debe tener más de 8 caracteres"
     }
   },
+  "errors": {
+    "UNKNOWN_ERROR": "Error desconocido",
+    "AUTH_INVALID_CREDENTIALS": "Correo electrónico o contraseña no válidos"
+  },
   "LoginPage": {
     "title": "Iniciar Sesión",
     "sign-in-to-helpinaut": "Inicia sesión en Helpinaut",
