@@ -1,11 +1,16 @@
-import { LoginDto, loginSchema, SignupDto, signupSchema } from "./auth.types";
+import {
+  LoginDto,
+  SignupDto,
+  signupSchema,
+  loginApiSchema,
+} from "./auth.types";
 import { client } from "@/lib/api/client";
 import { endpointPath } from "@/lib/api/endpoints";
 
 export async function loginRequest(
-  dto: Omit<LoginDto, "remember">,
+  dto: LoginDto,
 ): Promise<{ accessToken: string }> {
-  const parsed = loginSchema.omit({ remember: true }).safeParse(dto);
+  const parsed = loginApiSchema.safeParse(dto);
 
   if (!parsed.success) {
     throw new Error(parsed.error.message);

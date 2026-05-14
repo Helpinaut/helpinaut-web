@@ -1,7 +1,17 @@
 {
-  "Metadata": {
+  "metadata": {
     "title": "Helpinaut",
     "description": "Explorando mejores formas de ayudarnos con mercado de servicios locales."
+  },
+  "validation": {
+    "email": {
+      "required": "Correo electrónico requerido",
+      "invalid": "Formato de correo electrónico no válido"
+    },
+    "password": {
+      "required": "Contraseña requerida",
+      "min": "La contraseña debe tener más de 8 caracteres"
+    }
   },
   "LoginPage": {
     "title": "Iniciar Sesión",

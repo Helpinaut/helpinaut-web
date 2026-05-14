@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Controller, useForm } from "react-hook-form";
-import { LoginDto, loginSchema } from "../auth.types";
+import { LoginDto, LoginFormValues, loginFormSchema } from "../auth.types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppDispatch } from "@/store/hooks";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -32,18 +32,19 @@ import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "next-intl";
 
 export function LoginForm() {
-  const form = useForm<LoginDto>({
+  const t = useTranslations("LoginPage");
+  const validationMessages = useTranslations("validation");
+  const form = useForm<LoginFormValues>({
     defaultValues: {
       email: "",
       password: "",
       remember: true,
     },
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(loginFormSchema(validationMessages)),
     mode: "onBlur",
   });
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const t = useTranslations("LoginPage");
 
   async function onSubmit(data: LoginDto) {
     const res = await dispatch(login(data));

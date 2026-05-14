@@ -1,18 +1,26 @@
 import z from "zod";
 
-export const loginSchema = z.object({
-  email: z
-    .string()
-    .nonempty("Email is required")
-    .pipe(z.email("Invalid email format")),
-  password: z
-    .string()
-    .nonempty("Password is required")
-    .min(8, "Password must be longer than 8 characters"),
-  remember: z.boolean(),
+export const loginApiSchema = z.object({
+  email: z.string().nonempty().pipe(z.email()),
+  password: z.string().nonempty().min(8),
 });
 
-export type LoginDto = z.infer<typeof loginSchema>;
+export type LoginDto = z.infer<typeof loginApiSchema>;
+
+export const loginFormSchema = (t: (key: string) => string) =>
+  loginApiSchema.extend({
+    email: z
+      .string()
+      .nonempty(t("email.required"))
+      .pipe(z.email(t("email.invalid"))),
+    password: z
+      .string()
+      .nonempty(t("password.required"))
+      .min(8, t("password.min")),
+    remember: z.boolean(),
+  });
+
+export type LoginFormValues = z.infer<ReturnType<typeof loginFormSchema>>;
 
 export const signupSchema = z
   .object({

@@ -1,7 +1,17 @@
 {
-  "Metadata": {
+  "metadata": {
     "title": "Helpinaut",
     "description": "Exploring better ways to help with a local services marketplace."
+  },
+  "validation": {
+    "email": {
+      "required": "Email is required",
+      "invalid": "Invalid email format"
+    },
+    "password": {
+      "required": "Password is required",
+      "min": "Password must be longer than 8 characters"
+    }
   },
   "LoginPage": {
     "title": "Sing In",
