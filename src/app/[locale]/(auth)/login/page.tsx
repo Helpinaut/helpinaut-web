@@ -17,8 +17,8 @@ export async function generateMetadata({
 
 export default function LoginPage() {
   return (
-    <>
+    <main className="flex min-h-dvh items-center justify-center">
       <LoginForm />
-    </>
+    </main>
   );
 }
