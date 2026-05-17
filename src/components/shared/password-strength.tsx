@@ -1,24 +1,30 @@
 import { cn } from "@/lib/utils";
 import { Progress } from "../ui/progress";
 import { Check, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-export function PasswordStrengthMeter({ password }: { password: string }) {
+type Props = {
+  password: string;
+  t: ReturnType<typeof useTranslations>;
+};
+
+export function PasswordStrength({ password, t }: Props) {
   const checks = [
-    { label: "At least 8 characters", valid: password.length >= 8 },
-    { label: "At least 1 number", valid: /\d/.test(password) },
-    { label: "At least 1 lowercase letter", valid: /[a-z]/.test(password) },
-    { label: "At least 1 uppercase letter", valid: /[A-Z]/.test(password) },
+    { label: t("at-least-chars"), valid: password.length >= 8 },
+    { label: t("at-least-number"), valid: /\d/.test(password) },
+    { label: t("at-least-lower"), valid: /[a-z]/.test(password) },
+    { label: t("at-least-upper"), valid: /[A-Z]/.test(password) },
     {
-      label: "At least 1 special character",
+      label: t("at-least-special"),
       valid: /[^A-Za-z0-9]/.test(password),
     },
   ];
   const score = checks.filter((check) => check.valid).length;
   const strengthLabel = (score: number) => {
-    if (!score) return "Enter a password";
-    if (score <= 2) return "Weak password";
-    if (score === 3) return "Medium password";
-    if (score >= 4) return "Strong password";
+    if (!score) return t("enter-a-password");
+    if (score <= 2) return t("weak");
+    if (score === 3) return t("medium");
+    if (score >= 4) return t("strong");
   };
   const strengthColor =
     score === 1
@@ -42,10 +48,10 @@ export function PasswordStrengthMeter({ password }: { password: string }) {
           value={(score / checks.length) * 100}
         />
         <span className="text-muted-foreground">
-          {strengthLabel(score)}. Should contain:
+          {strengthLabel(score)}. {t("should-contain")}
         </span>
       </div>
-      <div className="space-y-1" aria-label="Password requirements">
+      <div className="space-y-1" aria-label={t("aria-password-requirements")}>
         {checks.map((item) => (
           <div key={item.label} className="flex items-center space-x-2">
             {item.valid ? (
@@ -64,7 +70,7 @@ export function PasswordStrengthMeter({ password }: { password: string }) {
               )}
             >
               <span className="sr-only">
-                {item.valid ? "Valid" : "Invalid"}:
+                {item.valid ? t("sr-valid") : t("sr-invalid")}:
               </span>
               {item.label}
             </span>

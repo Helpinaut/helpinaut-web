@@ -1,7 +1,7 @@
 "use client";
 
 import { endpointPath } from "@/lib/api/endpoints";
-import { LoginDto, LoginFormValues, SignupDto } from "./auth.types";
+import { LoginFormValues, SignupFormValues } from "./auth.types";
 import { User } from "../users/user.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { loginRequest, signupRequest } from "./auth.service";
@@ -43,7 +43,7 @@ export const login = createAppAsyncThunk<AuthSessionPayload, LoginFormValues>(
   },
 );
 
-export const signup = createAppAsyncThunk<AuthSessionPayload, SignupDto>(
+export const signup = createAppAsyncThunk<AuthSessionPayload, SignupFormValues>(
   endpointPath.AUTH.SIGNUP,
   async (dto, { rejectWithValue }) => {
     try {

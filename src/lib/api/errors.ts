@@ -1,8 +1,9 @@
-import axios from "axios";
+import axios, { HttpStatusCode } from "axios";
 
 export type ApiError = {
   code: string;
-  status?: number;
+  status?: HttpStatusCode;
+  field?: string;
 };
 
 export const handleThunkError = (error: unknown): ApiError => {
@@ -10,6 +11,7 @@ export const handleThunkError = (error: unknown): ApiError => {
     return {
       code: error.response?.data?.code ?? "UNKNOWN_ERROR",
       status: error.response?.status,
+      field: error.response?.data?.field,
     };
   }
 
