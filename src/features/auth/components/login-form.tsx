@@ -50,11 +50,9 @@ export function LoginForm() {
 
   async function onSubmit(data: LoginFormValues) {
     try {
-      const res = await dispatch(login(data)).unwrap();
-      if (login.fulfilled.match(res)) {
-        form.reset();
-        router.push("/");
-      }
+      await dispatch(login(data)).unwrap();
+      form.reset();
+      router.push("/");
     } catch (error) {
       const apiError = error as ApiError;
 

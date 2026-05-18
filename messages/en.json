@@ -10,12 +10,28 @@
     },
     "password": {
       "required": "Password is required",
+      "repeated": "Please, repeat your password",
+      "matching": "Passwords do not match",
       "min": "Password must be longer than 8 characters"
+    },
+    "username": {
+      "required": "Username is required",
+      "max": "Username can not be longer than 16 characters"
+    },
+    "postal-code": {
+      "required": "Postal code is required",
+      "length": "Postal code must be exactly 5 digits",
+      "regex": "Invalid Spanish postal code"
     }
   },
   "errors": {
     "UNKNOWN_ERROR": "Unknown error",
-    "AUTH_INVALID_CREDENTIALS": "Invalid email or password"
+    "AUTH_INVALID_CREDENTIALS": "Invalid email or password",
+    "UNIQUE_FIELD_CONFLICT": "This {field} is already in use",
+    "fields": {
+      "email": "email",
+      "username": "username"
+    }
   },
   "LoginPage": {
     "title": "Sing In",
@@ -30,6 +46,37 @@
     "new-to-helpinaut": "New to Helpinaut?",
     "create-an-account": "Create an account",
     "back-to-homepage": "Back to homepage"
+  },
+  "SignupPage": {
+    "title": "Sign up",
+    "create-your-account": "Create your account",
+    "welcome": "Welcome! Create your account to get started.",
+    "email": "Email",
+    "email-description": "This email address will be used for login and contact you. We will not share it with anyone else.",
+    "username": "Username",
+    "password": "Password",
+    "confirm-password": "Confirm password",
+    "postal-code": "Postal code",
+    "processing": "Processing",
+    "create-account": "Create account and log in",
+    "already-have-an-account": "Already have an account?",
+    "sign-in": "Sign in",
+    "back-to-homepage": "Back to homepage"
+  },
+  "PasswordStrength": {
+    "at-least-chars": "At least 8 characters",
+    "at-least-number": "At least 1 number",
+    "at-least-lower": "At least 1 lowercase letter",
+    "at-least-upper": "At least 1 uppercase letter",
+    "at-least-special": "At least 1 special character",
+    "enter-a-password": "Enter a password",
+    "weak": "Weak password",
+    "medium": "Medium password",
+    "strong": "Strong password",
+    "should-contain": "Should contain:",
+    "aria-password-requirements": "Password requirements",
+    "sr-valid": "Valid",
+    "sr-invalid": "Invalid"
   },
   "Hero": {
     "subheading": "Connect with neighbors and professionals in your area",
