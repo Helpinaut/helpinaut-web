@@ -79,12 +79,17 @@
     "sr-invalid": "Invalid"
   },
   "Hero": {
-    "subheading": "Connect with neighbors and professionals in your area",
-    "heading-line-1": "Do you",
-    "heading-line-1-strong": "need a hand",
-    "heading-line-2": "or",
-    "heading-line-2-strong": "want to lend one",
-    "heading-line-3": "You're not alone out there",
-    "description": "Hundreds of people post and find local services every day. Plumbers, electricians, guitar teachers, and much more. All right in your neighborhood."
+    "badge": "Connect with neighbors and professionals in your area",
+    "title": "Do you <strong>need a hand</strong><br></br>or <strong>want to lend one?</strong><br></br><highlight>You're not alone out there</highlight>",
+    "description": "Hundreds of people post and find services every day. Plumbers, electricians, guitar teachers, and much more. Right in your neighborhood.",
+    "cta": {
+      "request-help": "I need hep",
+      "offer-help": "I want to help"
+    },
+    "stats": {
+      "active-adverts": "Active adverts",
+      "users": "Users",
+      "categories": "Categories"
+    }
   }
 }

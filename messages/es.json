@@ -79,12 +79,17 @@
     "sr-invalid": "No validado"
   },
   "Hero": {
-    "subheading": "Conecta con vecinos y profesionales de tu zona",
-    "heading-line-1": "¿Necesitas",
-    "heading-line-1-strong": "una mano",
-    "heading-line-2": "o",
-    "heading-line-2-strong": "quieres ofrecerla",
-    "heading-line-3": "No estás solo ahí fuera",
-    "description": "Miles de personas ofrecen y buscan servicios a diario. Fontanería, electricistas, clases de guitarra y mucho más. Todo en tu vecindario."
+    "badge": "Conecta con vecinos y profesionales de tu zona",
+    "title": "¿Necesitas <strong>una mano</strong><br></br>o <strong>quieres ofrecerla?</strong><br></br><highlight>No estás solo ahí fuera</highlight>",
+    "description": "Miles de personas ofrecen y buscan servicios a diario. Fontanería, electricistas, clases de guitarra y mucho más. Todo en tu vecindario.",
+    "cta": {
+      "request-help": "Necesito un servicio",
+      "offer-help": "Ofrezco mis servicios"
+    },
+    "stats": {
+      "active-adverts": "Anuncios activos",
+      "users": "Usuarios",
+      "categories": "Categorías"
+    }
   }
 }
