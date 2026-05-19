@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import {
   DropdownMenu,
@@ -20,6 +20,7 @@ export function LanguageSelector({ className }: { className?: string }) {
   const pathname = usePathname();
   const router = useRouter();
   const locale = useLocale();
+  const t = useTranslations("LanguageSelector");
 
   const languages = [
     { code: "en", label: "English", flag: "🇬🇧" },
@@ -37,14 +38,14 @@ export function LanguageSelector({ className }: { className?: string }) {
         render={
           <Button variant="outline">
             <Languages aria-hidden="true" />
-            <span className="sr-only">Select language</span>
+            <span className="sr-only">{t("label")}</span>
             <span>{languages.find((lng) => lng.code === locale)?.label}</span>
           </Button>
         }
       />
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Select language</DropdownMenuLabel>
+          <DropdownMenuLabel>{t("label")}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuRadioGroup
             value={locale}

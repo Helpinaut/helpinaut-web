@@ -35,16 +35,18 @@ import { useRouter } from "next/navigation";
 import { Logo } from "../assets/logo";
 import { ThemeSelector } from "./theme-selector";
 import { LanguageSelector } from "./language-selector";
+import { useTranslations } from "next-intl";
 
 export function NavigationSheet({ user }: { user: User | null }) {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const t = useTranslations("NavigationSheet");
 
   return (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <SheetTrigger
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        aria-label={isMenuOpen ? t("close-menu") : t("open-menu")}
         render={
           <Button className="md:hidden" size="icon" variant="ghost">
             <Menu aria-hidden="true" size={20} />
@@ -65,53 +67,53 @@ export function NavigationSheet({ user }: { user: User | null }) {
               icon={Home}
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t("links.home")}
             </NavigationItem>
             <NavigationItem
               href="#main"
               icon={Search}
               onClick={() => setIsMenuOpen(false)}
             >
-              Explore services
+              {t("links.explore-services")}
             </NavigationItem>
           </NavigationSection>
-          <NavigationSection title="Create" separator="bottom">
+          <NavigationSection title={t("sections.create")} separator="bottom">
             <NavigationItem href="#" icon={HandCoins}>
-              Request a service
+              {t("links.request-help")}
             </NavigationItem>
             <NavigationItem href="#" icon={HandPlatter}>
-              Offer a service
+              {t("links.offer-help")}
             </NavigationItem>
           </NavigationSection>
           {user && (
-            <NavigationSection title="My activity">
+            <NavigationSection title={t("sections.activity")}>
               <NavigationItem href="#" icon={FileText}>
-                My listings
+                {t("links.listings")}
               </NavigationItem>
               <NavigationItem href="#" icon={MessageCircle}>
-                Messages
+                {t("links.messages")}
               </NavigationItem>
               <NavigationItem href="#" icon={Heart}>
-                Saved
+                {t("links.saved")}
               </NavigationItem>
             </NavigationSection>
           )}
-          <NavigationSection title="Support">
+          <NavigationSection title={t("sections.support")}>
             <NavigationItem href="#" icon={LifeBuoy}>
-              Help center
+              {t("links.help-center")}
             </NavigationItem>
           </NavigationSection>
         </nav>
         <SheetFooter className="bg-muted/50 border-t px-2 py-6">
           <nav className="flex flex-col gap-6">
-            <NavigationSection title="Account" separator="bottom">
+            <NavigationSection title={t("sections.account")} separator="bottom">
               {user ? (
                 <>
                   <NavigationItem href="#" icon={User2}>
-                    Profile
+                    {t("links.profile")}
                   </NavigationItem>
                   <NavigationItem href="#" icon={Settings}>
-                    Settings
+                    {t("lunks.settings")}
                   </NavigationItem>
                   <Button
                     variant="ghost"
@@ -122,16 +124,16 @@ export function NavigationSheet({ user }: { user: User | null }) {
                     }}
                   >
                     <LogOut aria-hidden="true" size={18} />
-                    Logout
+                    {t("links.logout")}
                   </Button>
                 </>
               ) : (
                 <>
                   <NavigationItem href="/login" icon={LogIn}>
-                    Log in
+                    {t("links.login")}
                   </NavigationItem>
                   <NavigationItem href="/signup" icon={UserPlus2}>
-                    Sign up
+                    {t("links.signup")}
                   </NavigationItem>
                 </>
               )}

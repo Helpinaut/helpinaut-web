@@ -19,10 +19,12 @@ import { Link } from "@/i18n/navigation";
 import { useAppSelector } from "@/store/hooks";
 import { ThemeSelector } from "../shared/theme-selector";
 import { LanguageSelector } from "../shared/language-selector";
+import { useTranslations } from "next-intl";
 
 export function Header() {
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState<boolean>(false);
   const user = useAppSelector((s) => s.user.user);
+  const t = useTranslations("Header");
 
   const toggleMobileSearchOpen = () => {
     setIsMobileSearchOpen((prev) => !prev);
@@ -34,7 +36,7 @@ export function Header() {
         className="bg-primary text-primary-foreground sr-only flex items-center justify-between gap-1.5 rounded-md px-3! py-1! text-sm font-medium focus:not-sr-only focus:absolute focus:top-4.5 focus:left-7"
         href="#main"
       >
-        Skip to main content
+        {t("skip-to-content")}
         <ArrowDown aria-hidden="true" size={16} />
       </a>
       <nav aria-label="Primary">
@@ -53,12 +55,12 @@ export function Header() {
                 size={16}
               />
               <Label className="sr-only" htmlFor="desktop-search">
-                Search services
+                {t("search.label")}
               </Label>
               <Input
                 id="desktop-search"
                 className="peer ps-9"
-                placeholder="Search services..."
+                placeholder={t("search.placeholder")}
                 type="search"
               />
             </div>
@@ -67,7 +69,9 @@ export function Header() {
                 aria-controls="mobile-search-bar"
                 aria-expanded={isMobileSearchOpen}
                 aria-label={
-                  isMobileSearchOpen ? "Hide search bar" : "Show search bar"
+                  isMobileSearchOpen
+                    ? t("search.aria-hide")
+                    : t("search.aria-show")
                 }
                 className="md:hidden"
                 onClick={toggleMobileSearchOpen}
@@ -78,11 +82,13 @@ export function Header() {
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger
-                  aria-label="Create listing"
+                  aria-label={t("create.label")}
                   render={
                     <Button className="size-8 sm:h-8 sm:w-auto">
                       <Plus aria-hidden="true" />
-                      <span className="hidden sm:inline">Create listing</span>
+                      <span className="hidden sm:inline">
+                        {t("search.label")}
+                      </span>
                     </Button>
                   }
                   type="button"
@@ -92,7 +98,7 @@ export function Header() {
                     render={
                       <Link href="#" className="flex items-center gap-2">
                         <HandCoins aria-hidden="true" />
-                        Request help
+                        {t("create.request-help")}
                       </Link>
                     }
                   />
@@ -100,7 +106,7 @@ export function Header() {
                     render={
                       <Link href="#" className="flex items-center gap-2">
                         <HandPlatter aria-hidden="true" />
-                        Offer help
+                        {t("create.offer-help")}
                       </Link>
                     }
                   />
@@ -128,12 +134,12 @@ export function Header() {
                 size={16}
               />
               <Label className="sr-only" htmlFor="mobile-search">
-                Search services
+                {t("search.label")}
               </Label>
               <Input
                 id="mobile-search"
                 className="peer ps-9 text-sm"
-                placeholder="Search services..."
+                placeholder={t("search.placeholder")}
                 type="search"
               />
             </div>

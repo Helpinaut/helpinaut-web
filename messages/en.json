@@ -78,6 +78,54 @@
     "sr-valid": "Valid",
     "sr-invalid": "Invalid"
   },
+  "LanguageSelector": {
+    "label": "Select language"
+  },
+  "ThemeSelector": {
+    "label": "Select theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "NavigationSheet": {
+    "open-menu": "Open menu",
+    "close-menu": "Close menu",
+    "sections": {
+      "create": "Create",
+      "activity": "My activity",
+      "support": "Support",
+      "account": "Account"
+    },
+    "links": {
+      "home": "Home",
+      "explore-services": "Explore services",
+      "request-help": "Request a service",
+      "offer-help": "Offer a service",
+      "listings": "My listings",
+      "messages": "Messages",
+      "saved": "Saved",
+      "help-center": "Help center",
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout",
+      "login": "Log in",
+      "signup": "Sign up"
+    }
+  },
+  "Header": {
+    "skip-to-content": "Skip to main content",
+    "search": {
+      "label": "Search services",
+      "placeholder": "Search services...",
+      "aria-hide": "Hide search bar",
+      "aria-show": "Show search bar"
+    },
+    "create": {
+      "label": "Create listing",
+      "request-help": "Request a service",
+      "offer-help": "Offer a service"
+    }
+  },
   "Hero": {
     "badge": "Connect with neighbors and professionals in your area",
     "title": "Do you <strong>need a hand</strong><br></br>or <strong>want to lend one?</strong><br></br><highlight>You're not alone out there</highlight>",
