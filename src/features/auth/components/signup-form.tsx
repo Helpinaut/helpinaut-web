@@ -193,8 +193,8 @@ export function SignupForm() {
                         onClick={togglePasswordVisibility}
                         aria-label={
                           isPasswordVisible
-                            ? "Hide password text"
-                            : "Show password text"
+                            ? t("aria-hide-password")
+                            : t("aria-show-password")
                         }
                         aria-pressed={isPasswordVisible}
                         aria-controls={field.name}
@@ -251,8 +251,8 @@ export function SignupForm() {
                         onClick={togglePasswordVisibility}
                         aria-label={
                           isPasswordVisible
-                            ? "Hide password text"
-                            : "Show password text"
+                            ? t("aria-hide-password")
+                            : t("aria-show-password")
                         }
                         aria-pressed={isPasswordVisible}
                         aria-controls={field.name}

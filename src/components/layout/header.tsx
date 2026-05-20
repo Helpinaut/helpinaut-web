@@ -6,7 +6,6 @@ import {
   HandPlatter,
   Plus,
   Search,
-  User,
   User2,
 } from "lucide-react";
 import { Logo } from "../assets/logo";
@@ -58,7 +57,7 @@ export function Header() {
             </div>
             <div className="relative hidden max-w-md flex-1 md:flex">
               <Search
-                aria-label="true"
+                aria-hidden="true"
                 className="text-muted-foreground/80 absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2"
                 size={16}
               />

@@ -45,7 +45,11 @@
     "sign-in": "Sign in",
     "new-to-helpinaut": "New to Helpinaut?",
     "create-an-account": "Create an account",
-    "back-to-homepage": "Back to homepage"
+    "back-to-homepage": "Back to homepage",
+    "aria": {
+      "hide-password": "Hide password text",
+      "show-password": "Show password text"
+    }
   },
   "SignupPage": {
     "title": "Sign up",
@@ -61,7 +65,9 @@
     "create-account": "Create account and log in",
     "already-have-an-account": "Already have an account?",
     "sign-in": "Sign in",
-    "back-to-homepage": "Back to homepage"
+    "back-to-homepage": "Back to homepage",
+    "aria-hide-password": "Hide password text",
+    "aria-show-password": "Show password text"
   },
   "PasswordStrength": {
     "at-least-chars": "At least 8 characters",
