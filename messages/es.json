@@ -124,6 +124,9 @@
       "label": "Crear anuncio",
       "request-help": "Necesito un servicio",
       "offer-help": "Ofrezco un servicio"
+    },
+    "user": {
+      "label": "Inicia sesión | Regístrate"
     }
   },
   "Hero": {

@@ -1,9 +1,17 @@
 "use client";
 
-import { ArrowDown, HandCoins, HandPlatter, Plus, Search } from "lucide-react";
+import {
+  ArrowDown,
+  HandCoins,
+  HandPlatter,
+  Plus,
+  Search,
+  User,
+  User2,
+} from "lucide-react";
 import { Logo } from "../assets/logo";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { Label } from "../ui/label";
 import { useState } from "react";
 import { Separator } from "../ui/separator";
@@ -87,7 +95,7 @@ export function Header() {
                     <Button className="size-8 sm:h-8 sm:w-auto">
                       <Plus aria-hidden="true" />
                       <span className="hidden sm:inline">
-                        {t("search.label")}
+                        {t("create.label")}
                       </span>
                     </Button>
                   }
@@ -112,6 +120,16 @@ export function Header() {
                   />
                 </DropdownMenuContent>
               </DropdownMenu>
+              <Link
+                href="/login"
+                className={cn(
+                  buttonVariants({ variant: "default" }),
+                  "hidden size-8 h-8 md:flex lg:w-auto",
+                )}
+              >
+                <User2 aria-hidden="true" />
+                <span className="hidden lg:inline">{t("user.label")}</span>
+              </Link>
               <LanguageSelector className="hidden md:flex" />
               <ThemeSelector className="hidden md:flex" />
               <NavigationSheet user={user} />

@@ -124,6 +124,9 @@
       "label": "Create listing",
       "request-help": "Request a service",
       "offer-help": "Offer a service"
+    },
+    "user": {
+      "label": "Log in | Sign up"
     }
   },
   "Hero": {
