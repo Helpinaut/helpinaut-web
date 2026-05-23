@@ -46,10 +46,8 @@
     "new-to-helpinaut": "¿Nuevo en Helpinaut?",
     "create-an-account": "Crea una cuenta",
     "back-to-homepage": "Volver a la página principal",
-    "aria": {
-      "hide-password": "Mostrar contraseña",
-      "show-password": "Ocultar contraseña"
-    }
+    "aria-hide-password": "Mostrar contraseña",
+    "aria-show-password": "Ocultar contraseña"
   },
   "SignupPage": {
     "title": "Registrar",

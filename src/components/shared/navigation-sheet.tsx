@@ -113,7 +113,7 @@ export function NavigationSheet({ user }: { user: User | null }) {
                     {t("links.profile")}
                   </NavigationItem>
                   <NavigationItem href="#" icon={Settings}>
-                    {t("lunks.settings")}
+                    {t("links.settings")}
                   </NavigationItem>
                   <Button
                     variant="ghost"
