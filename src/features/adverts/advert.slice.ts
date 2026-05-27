@@ -3,8 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type AdvertFilters = {
   title?: string | null;
-  minPrice?: number | null;
-  maxPrice?: number | null;
+  priceRange?: { min: number; max: number } | null;
   category?: string | null;
   isOffer?: boolean | null;
   page: number;
@@ -13,8 +12,7 @@ export type AdvertFilters = {
 
 const initialState: AdvertFilters = {
   title: null,
-  minPrice: null,
-  maxPrice: null,
+  priceRange: null,
   category: null,
   isOffer: null,
   page: 1,

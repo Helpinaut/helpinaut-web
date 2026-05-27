@@ -1,24 +1,21 @@
 "use client";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { CategorySelector } from "@/features/categories/components/category-selector";
 import { useRouter } from "@/i18n/navigation";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { useSearchParams } from "next/navigation";
 import { setFilters } from "../advert.slice";
 import { TypeSelector } from "./type-selector";
+import { PriceSlider } from "./price-slider";
+import { useState } from "react";
 
 export function AdvertFilters() {
   const dispatch = useAppDispatch();
-  const searchParams = useSearchParams();
   const router = useRouter();
   const filters = useAppSelector((s) => s.adverts);
+  const [priceRange, setPriceRange] = useState<[number, number]>([
+    filters.priceRange?.min ?? 0,
+    filters.priceRange?.max ?? 9999,
+  ]);
 
   function updateFilter(key: string, value: any) {
     const newFilters = { ...filters, [key]: value };
@@ -27,14 +24,24 @@ export function AdvertFilters() {
 
     const params = new URLSearchParams();
 
-    Object.entries(newFilters).forEach(([key, value]) => {
-      if (key === "limit") {
+    Object.entries(newFilters).forEach(([k, v]) => {
+      if (k === "limit") {
         return;
       }
 
-      if (value !== null && value !== undefined && value !== "") {
-        params.set(key, String(value));
+      if (v === null || v === undefined || v === "") {
+        return;
       }
+
+      if (typeof v === "object") {
+        Object.entries(v).forEach(([subKey, subValue]) => {
+          params.set(subKey, String(subValue));
+        });
+
+        return;
+      }
+
+      params.set(k, String(v));
     });
 
     router.push(`?${params.toString()}`);
@@ -69,6 +76,15 @@ export function AdvertFilters() {
                 if (value === "request") {
                   updateFilter("isOffer", false);
                 }
+              }}
+            />
+            <PriceSlider
+              value={priceRange}
+              onValueChange={(value) => {
+                setPriceRange(value);
+              }}
+              onValueCommitted={([min, max]) => {
+                updateFilter("priceRange", { min, max });
               }}
             />
           </div>
