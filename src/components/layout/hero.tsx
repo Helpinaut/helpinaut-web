@@ -1,66 +1,49 @@
-import { HandCoins, HandPlatter, Sparkles } from "lucide-react";
-import { Button } from "../ui/button";
+import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
+import { HeartHandshake } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { Baloo_Da_2 } from "next/font/google";
+import { SpaceBackground } from "../assets/space-background";
+
+const balooDa2 = Baloo_Da_2({ subsets: ["latin"] });
 
 export async function Hero() {
   const t = await getTranslations("Hero");
 
   return (
-    <section className="via-background w-full bg-linear-to-tr from-sky-500/10 to-purple-500/10 py-12 md:py-20">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-violet-100 px-4 py-2 text-indigo-600 dark:bg-[#1C1830] dark:text-indigo-400">
-            <Sparkles size={16} />
-            <span className="text-sm">{t("badge")}</span>
-          </div>
-          <h2 className="mb-6 text-4xl md:text-5xl lg:text-6xl">
-            {t.rich("title", {
-              strong: (chunks) => <strong>{chunks}</strong>,
-              br: () => <br />,
-              highlight: (chunks) => (
-                <span className="text-indigo-600 dark:text-indigo-400">
-                  {chunks}
-                </span>
-              ),
-            })}
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl text-lg md:text-xl">
-            {t("description")}
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Button size="lg" className="px-8 text-lg">
-              <HandCoins aria-hidden="true" />
-              {t("cta.request-help")}
-            </Button>
-            <Button size="lg" variant="outline" className="px-8 text-lg">
-              <HandPlatter aria-hidden="true" />
-              {t("cta.offer-help")}
-            </Button>
-          </div>
-          <div className="mt-12 grid grid-cols-3 gap-8 text-center md:gap-16">
-            <div>
-              <div className="mb-2 text-3xl text-indigo-600 md:text-4xl dark:text-indigo-400">
-                +20K
-              </div>
-              <div className="text-muted-foreground text-sm">
-                {t("stats.active-adverts")}
-              </div>
-            </div>
-            <div>
-              <div className="mb-2 text-3xl text-indigo-600 md:text-4xl dark:text-indigo-400">
-                +5K
-              </div>
-              <div className="text-muted-foreground text-sm">
-                {t("stats.users")}
-              </div>
-            </div>
-            <div>
-              <div className="mb-2 text-3xl text-indigo-600 md:text-4xl dark:text-indigo-400">
-                +15
-              </div>
-              <div className="text-muted-foreground text-sm">
-                {t("stats.categories")}
-              </div>
+    <section className="relative h-[600px] overflow-hidden md:h-[750px]">
+      <SpaceBackground />
+      <div className="absolute inset-x-0 bottom-12 z-10 px-4 md:bottom-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-xl">
+            <span className="flex w-fit items-center gap-3 rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-xs text-white">
+              {t("badge")}
+              <HeartHandshake className="size-4" />
+            </span>
+            <h2
+              className={cn(
+                balooDa2.className,
+                "mt-8 text-4xl leading-[1.15] font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl",
+              )}
+            >
+              {t.rich("title", { br: () => <br /> })}
+            </h2>
+            <p className="mt-5 max-w-lg text-sm leading-[1.35] text-neutral-300 sm:text-lg">
+              {t("description")}
+            </p>
+            <div className="xs:flex-row xs:items-center mt-8 flex flex-col items-start gap-4">
+              <Link
+                href="#"
+                className="focus-visible:outline-surface-border-alpha-1 flex h-10 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-medium text-nowrap text-black transition duration-150 ease-in-out hover:bg-white/90 focus:bg-white/90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 active:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:aria-pressed:cursor-default disabled:aria-pressed:opacity-100"
+              >
+                {t("cta.request-help")}
+              </Link>
+              <Link
+                href="#"
+                className="focus-visible:outline-surface-border-alpha-1 flex h-10 items-center justify-center gap-2 rounded-lg border border-white bg-black px-6 py-3 text-sm font-medium text-nowrap text-white transition duration-150 ease-in-out hover:bg-white/10 focus:bg-white/10 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 active:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:aria-pressed:cursor-default disabled:aria-pressed:opacity-100"
+              >
+                {t("cta.offer-help")}
+              </Link>
             </div>
           </div>
         </div>
