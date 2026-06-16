@@ -86,7 +86,7 @@
     "open-menu": "Abrir menu",
     "close-menu": "Cerrar menu",
     "sections": {
-      "create": "Crear anuncios",
+      "create": "Crear publicación",
       "activity": "Mi actividad",
       "support": "Soporte",
       "account": "Cuenta"
@@ -96,7 +96,7 @@
       "explore-services": "Buscar servicios",
       "request-help": "Solicitar un servicio",
       "offer-help": "Ofrecer un servicio",
-      "listings": "Mis anuncios",
+      "listings": "Mis publicaciones",
       "messages": "Mensajes",
       "saved": "Guardados",
       "help-center": "Centro de ayuda",
@@ -118,6 +118,10 @@
   },
   "Header": {
     "skip-to-content": "Saltar al contenido principal",
+    "browse": "Explorar",
+    "requests": "Buscan ayuda",
+    "offers": "Ofrecen ayuda",
+    "how-it-works": "Cómo funciona",
     "search": {
       "label": "Buscar servicios",
       "placeholder": "Buscar servicios...",
@@ -125,21 +129,22 @@
       "aria-show": "Mostrar barra de búsqueda"
     },
     "create": {
-      "label": "Crear anuncio",
-      "request-help": "Necesito un servicio",
-      "offer-help": "Ofrezco un servicio"
+      "label": "Crear publicación",
+      "request-help": "Pedir ayuda",
+      "offer-help": "Ofrecer ayuda"
     },
     "user": {
-      "label": "Inicia sesión | Regístrate"
+      "login": "Inicia sesión",
+      "profile": "Mi perfil"
     }
   },
   "Hero": {
-    "badge": "Conecta con vecinos y profesionales de tu zona",
-    "title": "¿Necesitas <strong>una mano</strong><br></br>o <strong>quieres ofrecerla?</strong><br></br><highlight>No estás solo ahí fuera</highlight>",
-    "description": "Miles de personas ofrecen y buscan servicios a diario. Fontanería, electricistas, clases de guitarra y mucho más. Todo en tu vecindario.",
+    "badge": "Mercado de servicios impulsado por la comunidad",
+    "title": "No estás solo <br></br> ahí fuera",
+    "description": "Encuentra personas cerca de ti dispuestas a echarte una mano en tu día a día, o comparte aquello que sabes hacer.",
     "cta": {
-      "request-help": "Necesito un servicio",
-      "offer-help": "Ofrezco mis servicios"
+      "request-help": "Necesito ayuda",
+      "offer-help": "Quiero ayudar"
     },
     "stats": {
       "active-adverts": "Anuncios activos",

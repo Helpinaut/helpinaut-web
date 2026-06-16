@@ -120,6 +120,10 @@
   },
   "Header": {
     "skip-to-content": "Skip to main content",
+    "browse": "Browse",
+    "requests": "Looking for help",
+    "offers": "Offering help",
+    "how-it-works": "How it works",
     "search": {
       "label": "Search services",
       "placeholder": "Search services...",
@@ -127,20 +131,21 @@
       "aria-show": "Show search bar"
     },
     "create": {
-      "label": "Create listing",
-      "request-help": "Request a service",
-      "offer-help": "Offer a service"
+      "label": "Create post",
+      "request-help": "Ask for help",
+      "offer-help": "Offer help"
     },
     "user": {
-      "label": "Log in | Sign up"
+      "login": "Log in",
+      "profile": "Profile"
     }
   },
   "Hero": {
-    "badge": "Connect with neighbors and professionals in your area",
-    "title": "Do you <strong>need a hand</strong><br></br>or <strong>want to lend one?</strong><br></br><highlight>You're not alone out there</highlight>",
-    "description": "Hundreds of people post and find services every day. Plumbers, electricians, guitar teachers, and much more. Right in your neighborhood.",
+    "badge": "Community-driven services marketplace",
+    "title": "You're not alone <br></br> out there",
+    "description": "Find nearby professionals, enthusiasts and neighbors ready to help with everyday missions, or share what you're good at.",
     "cta": {
-      "request-help": "I need hep",
+      "request-help": "I need help",
       "offer-help": "I want to help"
     },
     "stats": {
