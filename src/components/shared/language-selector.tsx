@@ -36,17 +36,15 @@ export function LanguageSelector({ className }: { className?: string }) {
       <DropdownMenuTrigger
         className={cn(className)}
         render={
-          <Button variant="outline">
+          <Button size="icon" variant="ghost">
             <Languages aria-hidden="true" />
             <span className="sr-only">{t("label")}</span>
-            <span>{languages.find((lng) => lng.code === locale)?.label}</span>
+            {/* <span>{languages.find((lng) => lng.code === locale)?.label}</span> */}
           </Button>
         }
       />
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuLabel>{t("label")}</DropdownMenuLabel>
-          <DropdownMenuSeparator />
           <DropdownMenuRadioGroup
             value={locale}
             onValueChange={handleChangeLanguage}

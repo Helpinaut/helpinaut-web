@@ -36,6 +36,10 @@ import { Logo } from "../assets/logo";
 import { ThemeSelector } from "./theme-selector";
 import { LanguageSelector } from "./language-selector";
 import { useTranslations } from "next-intl";
+import { Baloo_Da_2 } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const balooDa2 = Baloo_Da_2({ subsets: ["latin"] });
 
 export function NavigationSheet({ user }: { user: User | null }) {
   const dispatch = useAppDispatch();
@@ -48,7 +52,7 @@ export function NavigationSheet({ user }: { user: User | null }) {
       <SheetTrigger
         aria-label={isMenuOpen ? t("close-menu") : t("open-menu")}
         render={
-          <Button className="md:hidden" size="icon" variant="ghost">
+          <Button className="lg:hidden" size="icon" variant="ghost">
             <Menu aria-hidden="true" size={20} />
           </Button>
         }
@@ -57,7 +61,14 @@ export function NavigationSheet({ user }: { user: User | null }) {
       <SheetContent id="mobile-menu" className="w-72 sm:w-80" side="left">
         <SheetHeader>
           <SheetTitle>
-            <Logo aria-hidden="true" size={22} />
+            <span
+              className={cn(
+                balooDa2.className,
+                "text-xl font-bold [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]",
+              )}
+            >
+              Helpinaut
+            </span>
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col gap-6 p-2">
@@ -70,7 +81,7 @@ export function NavigationSheet({ user }: { user: User | null }) {
               {t("links.home")}
             </NavigationItem>
             <NavigationItem
-              href="#main"
+              href="/adverts"
               icon={Search}
               onClick={() => setIsMenuOpen(false)}
             >
