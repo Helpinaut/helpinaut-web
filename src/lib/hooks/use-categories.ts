@@ -13,7 +13,7 @@ export function useCategories() {
     if (!categories.length && !loading) {
       dispatch(getCategories());
     }
-  }, [dispatch, categories.length]);
+  }, [dispatch, categories.length, loading]);
 
   return { categories, loading };
 }

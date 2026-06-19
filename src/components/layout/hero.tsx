@@ -23,7 +23,7 @@ export async function Hero() {
             <h2
               className={cn(
                 balooDa2.className,
-                "mt-8 text-4xl leading-[1.15] font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl",
+                "mt-8 text-4xl leading-[1.15] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl",
               )}
             >
               {t.rich("title", { br: () => <br /> })}
@@ -34,7 +34,7 @@ export async function Hero() {
             <div className="xs:flex-row xs:items-center mt-8 flex flex-col items-start gap-4">
               <Link
                 href="#"
-                className="focus-visible:outline-surface-border-alpha-1 flex h-10 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-medium text-nowrap text-black transition duration-150 ease-in-out hover:bg-white/90 focus:bg-white/90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 active:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:aria-pressed:cursor-default disabled:aria-pressed:opacity-100"
+                className="focus-visible:outline-surface-border-alpha-1 flex h-10 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-medium text-nowrap text-black transition duration-150 ease-in-out hover:bg-white/80 focus:bg-white/90 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 active:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:aria-pressed:cursor-default disabled:aria-pressed:opacity-100"
               >
                 {t("cta.request-help")}
               </Link>
