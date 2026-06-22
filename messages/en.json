@@ -3,34 +3,54 @@
     "title": "Helpinaut",
     "description": "Exploring better ways to help with a local services marketplace."
   },
-  "validation": {
-    "email": {
-      "required": "Email is required",
-      "invalid": "Invalid email format"
+  "response": {
+    "category": {
+      "BEAUTY": "Beauty",
+      "CARE": "Care",
+      "CARPENTRY": "Carpentry",
+      "CLASSES": "Private Classes",
+      "CLEANING": "Cleaning",
+      "ELECTRICIAN": "Electrician",
+      "GARDENING": "Gardening",
+      "MEDIA": "Photography & Video",
+      "PAINTING": "Painting",
+      "PETS": "Pets",
+      "PLUMBING": "Plumbing",
+      "REPAIRS": "Repairs",
+      "RESTORATION": "Furniture Restoration",
+      "TECHNOLOGY": "Technology Assistance",
+      "TRAINING": "Personal Training",
+      "TRANSPORT": "Transport"
     },
-    "password": {
-      "required": "Password is required",
-      "repeated": "Please, repeat your password",
-      "matching": "Passwords do not match",
-      "min": "Password must be longer than 8 characters"
+    "error": {
+      "field": {
+        "email": "email",
+        "username": "username"
+      },
+      "UNKNOWN_ERROR": "Unknown error",
+      "AUTH_INVALID_CREDENTIALS": "Invalid email or password",
+      "UNIQUE_FIELD_CONFLICT": "This {field} is already in use"
     },
-    "username": {
-      "required": "Username is required",
-      "max": "Username can not be longer than 16 characters"
-    },
-    "postal-code": {
-      "required": "Postal code is required",
-      "length": "Postal code must be exactly 5 digits",
-      "regex": "Invalid Spanish postal code"
-    }
-  },
-  "errors": {
-    "UNKNOWN_ERROR": "Unknown error",
-    "AUTH_INVALID_CREDENTIALS": "Invalid email or password",
-    "UNIQUE_FIELD_CONFLICT": "This {field} is already in use",
-    "fields": {
-      "email": "email",
-      "username": "username"
+    "validation": {
+      "email": {
+        "required": "Email is required",
+        "invalid": "Invalid email format"
+      },
+      "password": {
+        "required": "Password is required",
+        "repeated": "Please, repeat your password",
+        "matching": "Passwords do not match",
+        "min": "Password must be longer than 8 characters"
+      },
+      "username": {
+        "required": "Username is required",
+        "max": "Username can not be longer than 16 characters"
+      },
+      "postal-code": {
+        "required": "Postal code is required",
+        "length": "Postal code must be exactly 5 digits",
+        "regex": "Invalid Spanish postal code"
+      }
     }
   },
   "LoginPage": {
@@ -147,11 +167,31 @@
     "cta": {
       "request-help": "I need help",
       "offer-help": "I want to help"
+    }
+  },
+  "Banner": {
+    "title": "A neighborhood is a constellation",
+    "description": "Every profession and hobby adds another star. Together we create stronger communities where help is always closer than we think.",
+    "cta": "Join the mission"
+  },
+  "HomePage": {
+    "hero": {
+      "badge": "Community-driven services marketplace",
+      "heading": "You're not alone <br></br> out there",
+      "description": "Find nearby professionals, enthusiasts and neighbors ready to help with everyday missions, or share what you're good at.",
+      "cta": {
+        "request": "I need help",
+        "offer": "I want to help"
+      }
     },
-    "stats": {
-      "active-adverts": "Active adverts",
-      "users": "Users",
-      "categories": "Categories"
+    "categories": {
+      "heading": "Categories",
+      "description": "Discover local experts and enthusiasts ready to lend you a hand, or find someone who needs it."
+    },
+    "join-banner": {
+      "heading": "A neighborhood is a constellation",
+      "description": "Every profession and hobby adds another star. Together we create stronger communities where help is always closer than we think.",
+      "cta": "Join the mission"
     }
   }
 }

@@ -3,34 +3,54 @@
     "title": "Helpinaut",
     "description": "Explorando mejores formas de ayudarnos con mercado de servicios locales."
   },
-  "validation": {
-    "email": {
-      "required": "Correo electrónico requerido",
-      "invalid": "Formato de correo electrónico no válido"
+  "response": {
+    "category": {
+      "BEAUTY": "Belleza",
+      "CARE": "Cuidados",
+      "CARPENTRY": "Carpintería",
+      "CLASSES": "Clases particulares",
+      "CLEANING": "Limpieza",
+      "ELECTRICIAN": "Electricistas",
+      "GARDENING": "Jardinería",
+      "MEDIA": "Fotografía y vídeo",
+      "PAINTING": "Pintura",
+      "PETS": "Mascotas",
+      "PLUMBING": "Fontanería",
+      "REPAIRS": "Reparaciones",
+      "RESTORATION": "Restauración de muebles",
+      "TECHNOLOGY": "Asistencia en tecnología",
+      "TRAINING": "Entrenamiento personal",
+      "TRANSPORT": "Transporte"
     },
-    "password": {
-      "required": "Contraseña requerida",
-      "repeated": "Por favor, repite tu contraseña",
-      "matching": "Las contraseñas no coinciden",
-      "min": "La contraseña debe tener más de 8 caracteres"
+    "error": {
+      "field": {
+        "email": "correo electrónico",
+        "username": "nombre de usuario"
+      },
+      "UNKNOWN_ERROR": "Error desconocido",
+      "AUTH_INVALID_CREDENTIALS": "Correo electrónico o contraseña no válidos",
+      "UNIQUE_FIELD_CONFLICT": "Este {field} ya está en uso"
     },
-    "username": {
-      "required": "Nombre de usuario requerido",
-      "max": "El nombre de usuario no debe exceder 16 caracteres"
-    },
-    "postal-code": {
-      "required": "Código postal requerido",
-      "length": "El código posta debe contener 5 dígitos",
-      "regex": "Código postal español no válido"
-    }
-  },
-  "errors": {
-    "UNKNOWN_ERROR": "Error desconocido",
-    "AUTH_INVALID_CREDENTIALS": "Correo electrónico o contraseña no válidos",
-    "UNIQUE_FIELD_CONFLICT": "Este {field} ya está en uso",
-    "fields": {
-      "email": "correo electrónico",
-      "username": "nombre de usuario"
+    "validation": {
+      "email": {
+        "required": "Correo electrónico requerido",
+        "invalid": "Formato de correo electrónico no válido"
+      },
+      "password": {
+        "required": "Contraseña requerida",
+        "repeated": "Por favor, repite tu contraseña",
+        "matching": "Las contraseñas no coinciden",
+        "min": "La contraseña debe tener más de 8 caracteres"
+      },
+      "username": {
+        "required": "Nombre de usuario requerido",
+        "max": "El nombre de usuario no debe exceder 16 caracteres"
+      },
+      "postal-code": {
+        "required": "Código postal requerido",
+        "length": "El código posta debe contener 5 dígitos",
+        "regex": "Código postal español no válido"
+      }
     }
   },
   "LoginPage": {
@@ -145,11 +165,31 @@
     "cta": {
       "request-help": "Necesito ayuda",
       "offer-help": "Quiero ayudar"
+    }
+  },
+  "Banner": {
+    "title": "El vecindario es una constelación",
+    "description": "Cada profesional y afición añade otra estrella. Juntos creamos comunidades más fuertes donde la ayuda siempre está más cerca de lo que creemos.",
+    "cta": "Únete a la misión"
+  },
+  "HomePage": {
+    "hero": {
+      "badge": "Mercado de servicios impulsado por la comunidad",
+      "heading": "No estás solo <br></br> ahí fuera",
+      "description": "Encuentra personas cerca de ti dispuestas a echarte una mano en tu día a día, o comparte aquello que sabes hacer.",
+      "cta": {
+        "request": "Necesito ayuda",
+        "offer": "Quiero ayudar"
+      }
     },
-    "stats": {
-      "active-adverts": "Anuncios activos",
-      "users": "Usuarios",
-      "categories": "Categorías"
+    "categories": {
+      "heading": "Categorías",
+      "description": "Descubre profesionales y entusiastas locales en disposición de echarte una mano, o encuentra a alguien que la necesite."
+    },
+    "join-banner": {
+      "heading": "El vecindario es una constelación",
+      "description": "Cada profesional y afición añade otra estrella. Juntos creamos comunidades más fuertes donde la ayuda siempre está más cerca de lo que creemos.",
+      "cta": "Unete a la misión"
     }
   }
 }

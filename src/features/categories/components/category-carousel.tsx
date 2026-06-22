@@ -13,6 +13,7 @@ import { Link } from "@/i18n/navigation";
 import { AdvertCategoryUI } from "@/lib/adverts/contraints";
 import { useCategories } from "@/lib/hooks/use-categories";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import { Baloo_Da_2 } from "next/font/google";
 
 const balooDa2 = Baloo_Da_2({ subsets: ["latin"] });
@@ -23,7 +24,7 @@ const CarouselSkeleton = () => {
       className="mx-auto w-full max-w-6xl"
       opts={{
         align: "start",
-        dragFree: false,
+        watchDrag: false,
       }}
     >
       <CarouselContent className="py-3">
@@ -52,21 +53,23 @@ const CarouselSkeleton = () => {
 };
 
 export function CategoryCarousel() {
+  const t = useTranslations("HomePage");
+  const tCategories = useTranslations("response.category");
   const { categories, loading } = useCategories();
+
   return (
     <section className="overflow-hidden py-10">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl px-4 text-center">
         <h3
           className={cn(
             balooDa2.className,
             "text-3xl leading-[1.15] font-semibold tracking-tight sm:text-4xl lg:text-5xl",
           )}
         >
-          Categories
+          {t("categories.heading")}
         </h3>
         <p className="text-muted-foreground mt-5">
-          Discover local experts and enthusiasts, or find someone who needs
-          assistance with this matters.
+          {t("categories.description")}
         </p>
         <div className="mt-8">
           {loading || categories.length === 0 ? (
@@ -95,7 +98,7 @@ export function CategoryCarousel() {
                               <div className="xs:justify-start flex items-center justify-center gap-3">
                                 <Icon className="xs:flex hidden size-4" />
                                 <h4 className="font-semibold">
-                                  {category.value}
+                                  {tCategories(`${category.value}`)}
                                 </h4>
                               </div>
                             </CardContent>
