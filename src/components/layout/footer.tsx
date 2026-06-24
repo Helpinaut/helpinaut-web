@@ -4,15 +4,15 @@ import {
   SiInstagram,
   SiX,
 } from "@icons-pack/react-simple-icons";
+import { Mail } from "lucide-react";
 import { Logo } from "../assets/logo";
 import { Button } from "../ui/button";
-import { Mail } from "lucide-react";
 import { Input } from "../ui/input";
 import { Separator } from "../ui/separator";
 
 export function Footer() {
   return (
-    <footer className="bg-muted/50 mt-16 w-full border-t">
+    <footer className="bg-muted/50 w-full border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>

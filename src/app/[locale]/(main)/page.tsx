@@ -1,8 +1,8 @@
-import { MissionBanner } from "@/components/layout/mission-banner";
 import { Hero } from "@/components/layout/hero";
+import { HowItWorksBanner } from "@/components/layout/how-it-works-banner";
+import { MissionBanner } from "@/components/layout/mission-banner";
 import { CategoryCarousel } from "@/features/categories/components/category-carousel";
 import { parseAdvertFilters } from "@/lib/adverts/parse-advert-filters";
-import { HowItWorksBanner } from "@/components/layout/how-it-works-banner";
 
 export default async function HomePage({
   searchParams,

@@ -3,29 +3,6 @@ import { getTranslations } from "next-intl/server";
 import { Baloo_Da_2 } from "next/font/google";
 
 const balooDa2 = Baloo_Da_2({ subsets: ["latin"] });
-const steps = [
-  {
-    index: "1",
-    title: "Create an account",
-    description: "Get access to post, chat and save your favorite listings.",
-  },
-  {
-    index: "2",
-    title: "Advertise yourself",
-    description: "Tell others what you need or what you can do for them.",
-  },
-  {
-    index: "3",
-    title: "Get in touch",
-    description:
-      "Find the best deals nearby, contact other users or receive their offers.",
-  },
-  {
-    index: "4",
-    title: "Lend a hand",
-    description: "Come to an agreement and set a time to get things done.",
-  },
-];
 
 export async function HowItWorksBanner() {
   const t = await getTranslations("HomePage.how-it-works-banner");
