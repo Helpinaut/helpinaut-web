@@ -167,11 +167,6 @@
       "offer-help": "Quiero ayudar"
     }
   },
-  "Banner": {
-    "title": "El vecindario es una constelación",
-    "description": "Cada profesional y afición añade otra estrella. Juntos creamos comunidades más fuertes donde la ayuda siempre está más cerca de lo que creemos.",
-    "cta": "Únete a la misión"
-  },
   "HomePage": {
     "hero": {
       "badge": "Mercado de servicios impulsado por la comunidad",
@@ -186,7 +181,28 @@
       "heading": "Categorías",
       "description": "Descubre profesionales y entusiastas locales en disposición de echarte una mano, o encuentra a alguien que la necesite."
     },
-    "join-banner": {
+    "how-it-works-banner": {
+      "heading": "Cómo funciona",
+      "steps": {
+        "1": {
+          "title": "Crea tu cuenta",
+          "description": "Obten acceso gratuito para publicar, chatear y guardar tus anuncios favoritos."
+        },
+        "2": {
+          "title": "Anúnciate",
+          "description": "Dile al mundo qué necesitas o qué puedes hacer por el resto."
+        },
+        "3": {
+          "title": "Hablemos",
+          "description": "Encuentra las mejores publicaciones, contacta otros usuarios o recibe sus ofertas."
+        },
+        "4": {
+          "title": "La ayuda está en camino",
+          "description": "Llega a acuerdos y queda con la otra persona para poneros manos a la obra."
+        }
+      }
+    },
+    "mission-banner": {
       "heading": "El vecindario es una constelación",
       "description": "Cada profesional y afición añade otra estrella. Juntos creamos comunidades más fuertes donde la ayuda siempre está más cerca de lo que creemos.",
       "cta": "Unete a la misión"

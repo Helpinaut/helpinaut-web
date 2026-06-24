@@ -169,11 +169,6 @@
       "offer-help": "I want to help"
     }
   },
-  "Banner": {
-    "title": "A neighborhood is a constellation",
-    "description": "Every profession and hobby adds another star. Together we create stronger communities where help is always closer than we think.",
-    "cta": "Join the mission"
-  },
   "HomePage": {
     "hero": {
       "badge": "Community-driven services marketplace",
@@ -188,7 +183,28 @@
       "heading": "Categories",
       "description": "Discover local experts and enthusiasts ready to lend you a hand, or find someone who needs it."
     },
-    "join-banner": {
+    "how-it-works-banner": {
+      "heading": "How it works",
+      "steps": {
+        "1": {
+          "title": "Create an account",
+          "description": "Get free access to posts, chats and save your favorite listings."
+        },
+        "2": {
+          "title": "Advertise yourself",
+          "description": "Tell others what you need ot what you can do for them."
+        },
+        "3": {
+          "title": "Get in touch",
+          "description": "Find the best deals nearby, contact other users or receive their offers."
+        },
+        "4": {
+          "title": "Lend a hand",
+          "description": "Come to an agreement and set a time to get things done."
+        }
+      }
+    },
+    "mission-banner": {
       "heading": "A neighborhood is a constellation",
       "description": "Every profession and hobby adds another star. Together we create stronger communities where help is always closer than we think.",
       "cta": "Join the mission"

@@ -31,14 +31,14 @@ export default function Header() {
       >
         {t("skip-to-content")}
       </a>
-      <header className="fixed inset-x-0 top-5 z-50 px-4">
+      <header className="fixed inset-x-0 top-10 z-50 px-4">
         <div className="mx-auto max-w-7xl">
           <div className="bg-card flex h-16 items-center justify-between rounded-lg border px-6 shadow-lg md:grid md:grid-cols-[1fr_auto_1fr]">
             <NavigationSheet user={user} />
             <nav className="hidden items-center gap-2 text-sm lg:flex">
               <Link
                 className={cn(buttonVariants({ variant: "ghost" }))}
-                href="#how-it-works"
+                href="/#how-it-works"
               >
                 {t("how-it-works")}
               </Link>

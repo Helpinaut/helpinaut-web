@@ -59,7 +59,7 @@ export function CategoryCarousel() {
 
   return (
     <section className="overflow-hidden py-10">
-      <div className="mx-auto max-w-7xl px-4 text-center">
+      <div className="mx-auto max-w-7xl px-4">
         <h3
           className={cn(
             balooDa2.className,
