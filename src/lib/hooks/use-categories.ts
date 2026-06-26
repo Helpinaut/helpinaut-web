@@ -7,13 +7,18 @@ import { useEffect } from "react";
 export function useCategories() {
   const dispatch = useAppDispatch();
   const categories = useAppSelector((s) => s.categories.categories);
-  const loading = useAppSelector((s) => s.categories.status === "loading");
+  const status = useAppSelector((s) => s.categories.status);
 
   useEffect(() => {
-    if (!categories.length && !loading) {
+    if (status === "idle") {
       dispatch(getCategories());
     }
-  }, [dispatch, categories.length, loading]);
+  }, [dispatch, status]);
 
-  return { categories, loading };
+  return {
+    categories,
+    loading: status === "loading",
+    loaded: status === "success",
+    error: status === "error",
+  };
 }

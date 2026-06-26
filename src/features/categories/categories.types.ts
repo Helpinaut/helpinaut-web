@@ -19,13 +19,12 @@ export const categoryValues = [
   "TRANSPORT",
 ] as const;
 
-export const categoryValueSchema = z.enum(categoryValues);
+export const categoryValuesSchema = z.enum(categoryValues);
 
-export type CategoryValue = z.infer<typeof categoryValueSchema>;
+export type CategoryValue = z.infer<typeof categoryValuesSchema>;
 
 export const categorySchema = z.object({
-  value: categoryValueSchema,
-  // label: z.string().nonempty(),
+  value: categoryValuesSchema,
 });
 
 export type Category = z.infer<typeof categorySchema>;

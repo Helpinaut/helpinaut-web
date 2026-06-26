@@ -1,15 +1,15 @@
 "use client";
 
 import { endpointPath } from "@/lib/api/endpoints";
+import { handleThunkError } from "@/lib/api/errors";
 import { createAppAsyncThunk } from "@/store/app.thunk";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getCategoriesRequest } from "./categories.service";
 import { Category } from "./categories.types";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { handleThunkError } from "@/lib/api/errors";
 
 type CategoriesState = {
   categories: Category[];
-  status: "idle" | "loading" | "error";
+  status: "idle" | "loading" | "success" | "error";
   errorCode: string | null;
 };
 
@@ -43,7 +43,7 @@ const categoriesSlice = createSlice({
       .addCase(
         getCategories.fulfilled,
         (state, action: PayloadAction<Category[]>) => {
-          state.status = "idle";
+          state.status = "success";
           state.categories = action.payload;
         },
       )

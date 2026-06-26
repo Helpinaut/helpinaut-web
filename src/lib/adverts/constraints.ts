@@ -19,7 +19,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-export const AdvertConstraints = {
+export const advertConstraints = {
   MIN_PAGE: 1,
   MAX_LIMIT: 20,
   MIN_PRICE: 1,
@@ -30,7 +30,7 @@ export const AdvertConstraints = {
 
 type CategoryValue = Category["value"];
 
-export const AdvertCategoryUI: Record<CategoryValue, { icon: LucideIcon }> = {
+export const advertCategoryIcon: Record<CategoryValue, { icon: LucideIcon }> = {
   BEAUTY: { icon: MirrorRound },
   CARE: { icon: HeartPulse },
   CARPENTRY: { icon: Birdhouse },

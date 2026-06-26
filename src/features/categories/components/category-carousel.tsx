@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "@/i18n/navigation";
-import { AdvertCategoryUI } from "@/lib/adverts/contraints";
+import { advertCategoryIcon } from "@/lib/adverts/constraints";
 import { useCategories } from "@/lib/hooks/use-categories";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
@@ -33,13 +33,11 @@ const CarouselSkeleton = () => {
             className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
             key={i}
           >
-            <div className="pl-1">
+            <div>
               <Card className="border-accent border">
-                <CardContent className="p-6">
-                  <div className="xs:justify-start flex items-center justify-center gap-3">
-                    <Skeleton className="xs:flex hidden size-4" />
-                    <Skeleton className="h-5 w-full" />
-                  </div>
+                <CardContent className="flex items-center justify-center gap-3 md:justify-start">
+                  <Skeleton className="flex size-4" />
+                  <Skeleton className="h-5 w-full" />
                 </CardContent>
               </Card>
             </div>
@@ -84,23 +82,22 @@ export function CategoryCarousel() {
             >
               <CarouselContent className="py-3">
                 {categories.map((category) => {
-                  const Icon = AdvertCategoryUI[category.value].icon;
+                  const Icon = advertCategoryIcon[category.value].icon;
+                  const label = tCategories.has(category.value)
+                    ? tCategories(category.value)
+                    : category.value;
 
                   return (
                     <CarouselItem
                       className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                       key={category.value}
                     >
-                      <div className="pl-1">
+                      <div>
                         <Link href={`/adverts?category=${category.value}`}>
                           <Card className="group border-accent border transition-all hover:-translate-y-1.5 hover:shadow-lg">
-                            <CardContent className="p-6">
-                              <div className="xs:justify-start flex items-center justify-center gap-3">
-                                <Icon className="xs:flex hidden size-4" />
-                                <h4 className="font-semibold">
-                                  {tCategories(`${category.value}`)}
-                                </h4>
-                              </div>
+                            <CardContent className="flex items-center justify-center gap-3 md:justify-start">
+                              <Icon className="flex size-4" />
+                              <h4 className="font-semibold">{label}</h4>
                             </CardContent>
                           </Card>
                         </Link>
