@@ -31,17 +31,17 @@ export default function Header() {
       >
         {t("skip-to-content")}
       </a>
-      <header className="fixed inset-x-0 top-10 z-50 px-4">
+      <header className="xs:top-10 fixed inset-x-0 top-6 z-50 px-4">
         <div className="mx-auto max-w-7xl">
           <div className="bg-card flex h-16 items-center justify-between rounded-lg border px-6 shadow-lg md:grid md:grid-cols-[1fr_auto_1fr]">
             <NavigationSheet user={user} />
             <nav className="hidden items-center gap-2 text-sm lg:flex">
-              <Link
+              {/* <Link
                 className={cn(buttonVariants({ variant: "ghost" }))}
                 href="/#how-it-works"
               >
                 {t("how-it-works")}
-              </Link>
+              </Link> */}
               <Link
                 className={cn(buttonVariants({ variant: "ghost" }))}
                 href="/adverts"
@@ -61,10 +61,7 @@ export default function Header() {
                 {t("offers")}
               </Link>
             </nav>
-            <Link
-              href="/"
-              className="flex items-center justify-self-start sm:justify-self-center"
-            >
+            <Link href="/" className="flex items-center justify-self-center">
               <span
                 className={cn(
                   balooDa2.className,
@@ -75,10 +72,13 @@ export default function Header() {
               </span>
             </Link>
             <div className="flex items-center gap-2 md:justify-self-end">
-              <ThemeSelector className="xs:flex hidden" />
-              <LanguageSelector className="xs:flex hidden" />
+              <ThemeSelector className="hidden md:flex" />
+              <LanguageSelector className="hidden md:flex" />
               <Link
-                className={cn(buttonVariants({ variant: "ghost" }))}
+                className={cn(
+                  buttonVariants({ variant: "ghost" }),
+                  "hidden md:flex",
+                )}
                 href={user ? "/profile" : "/login"}
                 aria-label={user ? t("user.profile") : t("user.login")}
               >

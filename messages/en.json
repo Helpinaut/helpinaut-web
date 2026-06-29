@@ -160,21 +160,16 @@
       "profile": "Profile"
     }
   },
-  "Hero": {
-    "badge": "Community-driven services marketplace",
-    "title": "You're not alone <br></br> out there",
-    "description": "Find nearby professionals, enthusiasts and neighbors ready to help with everyday missions, or share what you're good at.",
-    "cta": {
-      "request-help": "I need help",
-      "offer-help": "I want to help"
-    }
-  },
   "HomePage": {
     "hero": {
       "badge": "Community-driven services marketplace",
       "heading": "You're not alone <br></br> out there",
       "description": "Find nearby professionals, enthusiasts and neighbors ready to help with everyday missions, or share what you're good at.",
       "cta": {
+        "search": {
+          "label": "Search posts in Helpinaut",
+          "placeholder": "Electrician with experience in..."
+        },
         "request": "I need help",
         "offer": "I want to help"
       }

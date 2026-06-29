@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Separator } from "../ui/separator";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-muted/50 w-full border-t">
       <div className="container mx-auto px-4 py-12">

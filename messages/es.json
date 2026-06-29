@@ -158,21 +158,16 @@
       "profile": "Mi perfil"
     }
   },
-  "Hero": {
-    "badge": "Mercado de servicios impulsado por la comunidad",
-    "title": "No estás solo <br></br> ahí fuera",
-    "description": "Encuentra personas cerca de ti dispuestas a echarte una mano en tu día a día, o comparte aquello que sabes hacer.",
-    "cta": {
-      "request-help": "Necesito ayuda",
-      "offer-help": "Quiero ayudar"
-    }
-  },
   "HomePage": {
     "hero": {
-      "badge": "Mercado de servicios impulsado por la comunidad",
+      "badge": "Mercado de servicios en tu comunidad",
       "heading": "No estás solo <br></br> ahí fuera",
-      "description": "Encuentra personas cerca de ti dispuestas a echarte una mano en tu día a día, o comparte aquello que sabes hacer.",
+      "description": "Encuentra personas cerca de ti dispuestas a ofrecer su ayuda en tu día a día, o comparte aquello que mejor sabes hacer.",
       "cta": {
+        "search": {
+          "label": "Busca publicaciones en Helpinaut",
+          "placeholder": "Electricista con experiencia en..."
+        },
         "request": "Necesito ayuda",
         "offer": "Quiero ayudar"
       }
