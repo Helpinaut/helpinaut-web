@@ -113,51 +113,43 @@
     "dark": "Dark",
     "system": "System"
   },
-  "NavigationSheet": {
-    "open-menu": "Open menu",
-    "close-menu": "Close menu",
-    "sections": {
-      "create": "Create",
-      "activity": "My activity",
-      "support": "Support",
-      "account": "Account"
-    },
-    "links": {
-      "home": "Home",
-      "explore-services": "Explore services",
-      "request-help": "Request a service",
-      "offer-help": "Offer a service",
-      "listings": "My listings",
-      "messages": "Messages",
-      "saved": "Saved",
-      "help-center": "Help center",
-      "profile": "Profile",
-      "settings": "Settings",
-      "logout": "Logout",
-      "login": "Log in",
-      "signup": "Sign up"
-    }
-  },
   "Header": {
     "skip-to-content": "Skip to main content",
     "browse": "Browse",
     "requests": "Looking for help",
     "offers": "Offering help",
-    "how-it-works": "How it works",
-    "search": {
-      "label": "Search services",
-      "placeholder": "Search services...",
-      "aria-hide": "Hide search bar",
-      "aria-show": "Show search bar"
-    },
-    "create": {
-      "label": "Create post",
-      "request-help": "Ask for help",
-      "offer-help": "Offer help"
-    },
     "user": {
       "login": "Log in",
       "profile": "Profile"
+    },
+    "cta": {
+      "label": "Create post",
+      "request": "Ask for help",
+      "offer": "Offer help"
+    },
+    "navigation-menu": {
+      "open-menu": "Open menu",
+      "close-menu": "Close menu",
+      "home": "Home",
+      "browse": "Browse",
+      "create-section": {
+        "heading": "Create post",
+        "request": "Ask for help",
+        "offer": "Offer help"
+      },
+      "activity-section": {
+        "heading": "My activity",
+        "listings": "My listings",
+        "chats": "Chats",
+        "saved": "Saved"
+      },
+      "user-section": {
+        "profile": "My profile",
+        "settings": "Settings",
+        "logout": "Logout",
+        "login": "Log in",
+        "signup": "Sign up"
+      }
     }
   },
   "HomePage": {

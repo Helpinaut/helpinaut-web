@@ -7,7 +7,7 @@ import { Hand, Plus, Toolbox, User2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Baloo_Da_2 } from "next/font/google";
 import { LanguageSelector } from "../shared/language-selector";
-import { NavigationSheet } from "../shared/navigation-sheet";
+import { NavigationMenu } from "../shared/navigation-menu";
 import { ThemeSelector } from "../shared/theme-selector";
 import { Button, buttonVariants } from "../ui/button";
 import {
@@ -34,14 +34,8 @@ export default function Header() {
       <header className="xs:top-10 fixed inset-x-0 top-6 z-50 px-4">
         <div className="mx-auto max-w-7xl">
           <div className="bg-card flex h-16 items-center justify-between rounded-lg border px-6 shadow-lg md:grid md:grid-cols-[1fr_auto_1fr]">
-            <NavigationSheet user={user} />
+            <NavigationMenu user={user} />
             <nav className="hidden items-center gap-2 text-sm lg:flex">
-              {/* <Link
-                className={cn(buttonVariants({ variant: "ghost" }))}
-                href="/#how-it-works"
-              >
-                {t("how-it-works")}
-              </Link> */}
               <Link
                 className={cn(buttonVariants({ variant: "ghost" }))}
                 href="/adverts"
@@ -86,7 +80,7 @@ export default function Header() {
               </Link>
               <DropdownMenu>
                 <DropdownMenuTrigger
-                  aria-label={t("create.label")}
+                  aria-label={t("cta.label")}
                   render={
                     <Button
                       variant="default"
@@ -94,9 +88,7 @@ export default function Header() {
                       className="lg:w-auto lg:px-2.5"
                     >
                       <Plus className="flex lg:hidden" />
-                      <span className="hidden lg:flex">
-                        {t("create.label")}
-                      </span>
+                      <span className="hidden lg:flex">{t("cta.label")}</span>
                     </Button>
                   }
                 />
@@ -108,7 +100,7 @@ export default function Header() {
                         className="flex cursor-pointer items-center gap-2"
                       >
                         <Hand />
-                        {t("create.request-help")}
+                        {t("cta.request")}
                       </Link>
                     }
                   />
@@ -119,7 +111,7 @@ export default function Header() {
                         className="flex cursor-pointer items-center gap-2"
                       >
                         <Toolbox />
-                        {t("create.offer-help")}
+                        {t("cta.offer")}
                       </Link>
                     }
                   />

@@ -102,31 +102,6 @@
     "sr-valid": "Validado",
     "sr-invalid": "No validado"
   },
-  "NavigationSheet": {
-    "open-menu": "Abrir menu",
-    "close-menu": "Cerrar menu",
-    "sections": {
-      "create": "Crear publicación",
-      "activity": "Mi actividad",
-      "support": "Soporte",
-      "account": "Cuenta"
-    },
-    "links": {
-      "home": "Página principal",
-      "explore-services": "Buscar servicios",
-      "request-help": "Solicitar un servicio",
-      "offer-help": "Ofrecer un servicio",
-      "listings": "Mis publicaciones",
-      "messages": "Mensajes",
-      "saved": "Guardados",
-      "help-center": "Centro de ayuda",
-      "profile": "Perfil",
-      "settings": "Configuración",
-      "logout": "Cerrar sesión",
-      "login": "Iniciar sesión",
-      "signup": "Regístrate"
-    }
-  },
   "LanguageSelector": {
     "label": "Selecciona idioma"
   },
@@ -141,21 +116,38 @@
     "browse": "Explorar",
     "requests": "Buscan ayuda",
     "offers": "Ofrecen ayuda",
-    "how-it-works": "Cómo funciona",
-    "search": {
-      "label": "Buscar servicios",
-      "placeholder": "Buscar servicios...",
-      "aria-hide": "Ocultar barra de búsqueda",
-      "aria-show": "Mostrar barra de búsqueda"
-    },
-    "create": {
-      "label": "Crear publicación",
-      "request-help": "Pedir ayuda",
-      "offer-help": "Ofrecer ayuda"
-    },
     "user": {
       "login": "Inicia sesión",
       "profile": "Mi perfil"
+    },
+    "cta": {
+      "label": "Crear publicación",
+      "request": "Pedir ayuda",
+      "offer": "Ofrecer ayuda"
+    },
+    "navigation-menu": {
+      "open-menu": "Abrir menu",
+      "close-menu": "Cerrar menu",
+      "home": "Página principal",
+      "browse": "Explorar",
+      "create-section": {
+        "heading": "Crear publicación",
+        "request": "Pedir ayuda",
+        "offer": "Ofrecer ayuda"
+      },
+      "activity-section": {
+        "heading": "Mi actividad",
+        "listings": "Mis publicaciones",
+        "chats": "Chats",
+        "saved": "Guardados"
+      },
+      "user-section": {
+        "profile": "Mi perfil",
+        "settings": "Configuración",
+        "logout": "Cerrar sesión",
+        "login": "Inicia sesión",
+        "signup": "Regístrate"
+      }
     }
   },
   "HomePage": {
