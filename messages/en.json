@@ -74,21 +74,24 @@
   },
   "SignupPage": {
     "title": "Sign up",
-    "create-your-account": "Create your account",
-    "welcome": "Welcome! Create your account to get started.",
+    "heading": "Create your account",
+    "google": "Sign up with Google",
+    "separator": "or continue with",
     "email": "Email",
     "email-description": "This email address will be used for login and contact you. We will not share it with anyone else.",
     "username": "Username",
     "password": "Password",
+    "aria": {
+      "hide": "Hide password text",
+      "show": "Show password text"
+    },
     "confirm-password": "Confirm password",
     "postal-code": "Postal code",
+    "sign-up": "Create account and log in",
     "processing": "Processing",
-    "create-account": "Create account and log in",
-    "already-have-an-account": "Already have an account?",
+    "already": "Already have one?",
     "sign-in": "Sign in",
-    "back-to-homepage": "Back to homepage",
-    "aria-hide-password": "Hide password text",
-    "aria-show-password": "Show password text"
+    "back-to-homepage": "Back to homepage"
   },
   "PasswordStrength": {
     "at-least-chars": "At least 8 characters",

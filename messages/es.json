@@ -74,21 +74,24 @@
   },
   "SignupPage": {
     "title": "Registrar",
-    "create-your-account": "Crea tu cuenta",
-    "welcome": "¡Bienvenido! Regístrate para empezar.",
+    "heading": "Crea tu cuenta",
+    "google": "Regístrate con Google",
+    "separator": "o continua con",
     "email": "Correo electrónico",
     "email-description": "Esta dirección se usará para iniciar tu sesión y futuros contactos. ¡No la compartimos con nadie!",
     "username": "Nombre de usuario",
     "password": "Contraseña",
+    "aria": {
+      "hide": "Mostrar contraseña",
+      "show": "Ocultar contraseña"
+    },
     "confirm-password": "Confirmar contraseña",
     "postal-code": "Código postal",
+    "sign-up": "Crear cuenta e iniciar sesión",
     "processing": "Procesando",
-    "create-account": "Crear cuenta e iniciar sesión",
-    "already-have-an-account": "¿Ya tienes una cuenta?",
+    "already": "¿Tienes cuenta?",
     "sign-in": "Inicia sesión",
-    "back-to-homepage": "Volver a la página principal",
-    "aria-hide-password": "Mostrar contraseña",
-    "aria-show-password": "Ocultar contraseña"
+    "back-to-homepage": "Volver a la página principal"
   },
   "PasswordStrength": {
     "at-least-chars": "Al menos 8 caracteres",
