@@ -55,19 +55,22 @@
   },
   "LoginPage": {
     "title": "Iniciar Sesión",
-    "sign-in-to-helpinaut": "Inicia sesión en Helpinaut",
-    "enter-your-credentials": "Introduce tus credenciaes para acceder a tu cuenta",
+    "heading": "Bienvenido a",
+    "google": "Inicia sesión con Google",
+    "separator": "o continua con",
     "email": "Correo electrónico",
     "password": "Contraseña",
+    "aria": {
+      "hide": "Mostrar contraseña",
+      "show": "Ocultar contraseña"
+    },
     "forgot-password": "¿Olvidaste tu contraseña?",
     "remember-me": "Recordar sesión",
-    "processing": "Procesando",
     "sign-in": "Iniciar sesión",
-    "new-to-helpinaut": "¿Nuevo en Helpinaut?",
-    "create-an-account": "Crea una cuenta",
-    "back-to-homepage": "Volver a la página principal",
-    "aria-hide-password": "Mostrar contraseña",
-    "aria-show-password": "Ocultar contraseña"
+    "processing": "Procesando",
+    "new": "¿Tu primera vez?",
+    "sign-up": "Crea tu cuenta",
+    "back-to-homepage": "Volver a la página principal"
   },
   "SignupPage": {
     "title": "Registrar",

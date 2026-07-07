@@ -54,22 +54,23 @@
     }
   },
   "LoginPage": {
-    "title": "Sing In",
-    "sign-in-to-helpinaut": "Sign in to Helpinaut",
-    "enter-your-credentials": "Enter your credentials to access your account",
+    "title": "Sign In",
+    "heading": "Welcome to",
+    "google": "Sign in with Google",
+    "separator": "or continue with",
     "email": "Email",
     "password": "Password",
+    "aria": {
+      "hide": "Hide password text",
+      "show": "Show password text"
+    },
     "forgot-password": "Forgot password?",
     "remember-me": "Remember me",
-    "processing": "Processing",
     "sign-in": "Sign in",
-    "new-to-helpinaut": "New to Helpinaut?",
-    "create-an-account": "Create an account",
-    "back-to-homepage": "Back to homepage",
-    "aria": {
-      "hide-password": "Hide password text",
-      "show-password": "Show password text"
-    }
+    "processing": "Processing",
+    "new": "New here?",
+    "sign-up": "Create your account",
+    "back-to-homepage": "Back to homepage"
   },
   "SignupPage": {
     "title": "Sign up",
